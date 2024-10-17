@@ -1,0 +1,151 @@
+- type: entity
+  id: BaseAndroidOrgan
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+  - type: Organ
+
+
+- type: entity
+  id: OrganAndroidBrain
+  parent: BaseAndroidOrgan
+  name: электронный мозг
+  description: "Источник совершенного искусственного интеллекта."
+  components:
+  - type: Sprite
+    state: brain
+  - type: Input
+    context: "ghost"
+  - type: Brain
+  - type: InputMover
+  - type: Examiner
+  - type: BlockMovement
+
+- type: entity
+  id: OrganAndroidEyes
+  parent: BaseAndroidOrgan
+  name: бионические глаза
+  description: "Они очень живые... Для искусственных..."
+  components:
+  - type: Sprite
+    layers:
+      - state: eyeball-l
+      - state: eyeball-r
+  - type: Gibbable
+
+- type: entity
+  id: OrganAndroidTongue
+  parent: BaseAndroidOrgan
+  name: синтетический язык
+  description: "Механическая мышца с датчиками, заменяющая человеческие вкусовые рецепторы."
+  components:
+  - type: Sprite
+    state: tongue
+  - type: Gibbable
+
+- type: entity
+  id: OrganAndroidAppendix
+  parent: BaseAndroidOrgan
+  name: детектор сбоев
+  components:
+  - type: Sprite
+    layers:
+    - state: appendix
+    - state: appendix-inflamed
+      visible: false
+  - type: Gibbable
+
+- type: entity
+  id: OrganAndroidEars
+  parent: BaseAndroidOrgan
+  name: механические уши
+  description: "Безупречный слух."
+  components:
+  - type: Sprite
+    state: ears
+  - type: Gibbable
+
+- type: entity
+  id: OrganAndroidLungs
+  parent: BaseAndroidOrgan
+  name: механические лёгкие
+  description: "Отдышка не грозит."
+  components:
+  - type: Sprite
+    layers:
+      - state: lung-l
+      - state: lung-r
+  - type: Lung
+  - type: Metabolizer
+    removeEmpty: true
+    solutionOnBody: false
+    solution: "Lung"
+    metabolizerTypes: [ Android ]
+    groups:
+    - id: Gas
+      rateModifier: 100.0
+  - type: Gibbable
+
+- type: entity
+  id: OrganAndroidHeart
+  parent: BaseAndroidOrgan
+  name: механическое сердце
+  description: "Не думаю, что оно может страдать... Хотя..."
+  components:
+  - type: Sprite
+    state: heart-on
+  - type: Metabolizer
+    maxReagents: 2
+    metabolizerTypes: [Human]
+    groups:
+    - id: BioRobotic
+  - type: Gibbable
+
+- type: entity
+  id: OrganAndroidStomach
+  parent: BaseAndroidOrgan
+  name: электропреобразовывающий желудок
+  description: "Перерабатывает... Питание для андроида?..."
+  components:
+  - type: Sprite
+    state: stomach
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50
+  - type: Stomach
+  - type: Metabolizer
+    maxReagents: 3
+    metabolizerTypes: [Human]
+    groups:
+    - id: Food
+    - id: Drink
+  - type: Gibbable
+
+- type: entity
+  id: OrganAndroidLiver
+  parent: BaseAndroidOrgan
+  name: жидкостный фильтр
+  description: "Чем чище тириум, тем лучше."
+  components:
+  - type: Sprite
+    state: liver
+  - type: Gibbable
+
+- type: entity
+  id: OrganAndroidKidneys
+  parent: BaseAndroidOrgan
+  name: очистительный модуль
+  description: "Небольшая страховка от любителей напоить андроида."
+  components:
+  - type: Sprite
+    layers:
+      - state: kidney-l
+      - state: kidney-r
+  - type: Metabolizer
+    maxReagents: 1
+    metabolizerTypes: [Human]
+    removeEmpty: true
+  - type: Gibbable

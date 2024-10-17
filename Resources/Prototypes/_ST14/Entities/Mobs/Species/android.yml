@@ -1,0 +1,506 @@
+- type: entity
+  save: false
+  name: Урист МакАндроид
+  id: BaseMobAndroid
+  abstract: true
+  components:
+# BaseMob
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures: # TODO: This needs a second fixture just for mob collisions.
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 185
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Clickable
+  - type: InteractionOutline
+  - type: InputMover
+  - type: Input
+    context: "human"
+  - type: LagCompensation
+  - type: MobMover
+  - type: Actions
+  - type: Alerts
+  - type: Appearance
+  - type: RotationVisuals
+    defaultRotation: 90
+    horizontalRotation: 90
+  - type: DoAfter
+  - type: Examiner
+  - type: Eye
+  - type: ContentEye
+  - type: CameraRecoil
+  - type: MindContainer
+    showExamineInfo: true
+  - type: MovementSpeedModifier
+  - type: TTS # Corvax-TTS
+  - type: RequireProjectileTarget
+    active: False
+# MobBloodstream
+  - type: SolutionContainerManager
+  - type: InjectableSolution
+    solution: chemicals
+  - type: Bloodstream
+    bloodlossDamage:
+      types:
+        Bloodloss: 1.05
+    bloodlossHealDamage:
+      types:
+        Bloodloss: -1.05
+# MobRespirator
+  - type: Internals
+  - type: Respirator
+    damage:
+      types:
+        Asphyxiation: 1.0
+    damageRecovery:
+      types:
+        Asphyxiation: -1.0
+# MobAtmosStandart
+  - type: ThermalRegulator
+    metabolismHeat: 800
+    radiatedHeat: 1000
+    implicitHeatRegulation: 500
+    sweatHeatRegulation: 2000
+    shiveringHeatRegulation: 2000
+    normalBodyTemperature: 310.15
+    thermalRegulationTemperatureThreshold: 25
+  - type: Temperature
+    heatDamageThreshold: 460
+    coldDamageThreshold: 275
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold: 0.2 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 0.1 #per second, scales with temperature & other constants
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0.35 #per second, scales with pressure and other constants.
+# MobFlammable
+  - type: Flammable
+    fireSpread: true
+    canResistFire: true
+    damage: #per second, scales with number of fire 'stacks'
+      types:
+        Heat: 1.5
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Generic_mob_burning
+    alternateState: Standing
+    fireStackAlternateState: 3
+# MobDamageable
+  - type: Damageable
+    damageContainer: BioRobotic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 600
+      behaviors:
+      - !type:GibBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 3000
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: false
+        spawn:
+          Ash:
+            min: 1
+            max: 2
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact
+  - type: RadiationReceiver
+  - type: Stamina
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      170: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+  - type: MobStateActions
+    actions:
+      Critical:
+      - ActionCritSuccumb
+      - ActionCritFakeDeath
+      - ActionCritLastWords
+  - type: Deathgasp
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+    - Cold
+    - Caustic
+  - type: DamageOnHighSpeedImpact
+    damage:
+      types:
+        Blunt: 7
+    soundHit:
+      path: /Audio/Effects/hit_kick.ogg
+  - type: Pullable
+  - type: LightningTarget
+    priority: 1
+    lightningExplode: false
+# MobPolymorphable
+  - type: Polymorphable
+# MobCombat
+  - type: CombatMode
+    canDisarm: true
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      collection: Punch
+    angle: 30
+    animation: WeaponArcFist
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 10
+# InventoryBase
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
+  - type: InventorySlots
+# StripableInventoryBase
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.VoiceMaskUIKey.Key:
+        type: VoiceMaskBoundUserInterface
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+# BaseMobSpecies
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    layers:
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "enum.HumanoidVisualLayers.RArm" ]
+    - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - map: ["jumpsuit"]
+    - map: ["enum.HumanoidVisualLayers.LFoot"]
+    - map: ["enum.HumanoidVisualLayers.RFoot"]
+    - map: ["enum.HumanoidVisualLayers.LHand"]
+    - map: ["enum.HumanoidVisualLayers.RHand"]        
+    - map: [ "gloves" ]
+    - map: [ "shoes" ]
+    - map: [ "ears" ]
+    - map: [ "outerClothing" ]
+    - map: [ "eyes" ]
+    - map: [ "belt" ]
+    - map: [ "id" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "enum.HumanoidVisualLayers.Hair" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "clownedon" ] # Dynamically generated
+      sprite: "Effects/creampie.rsi"
+      state: "creampie_human"
+      visible: false
+  - type: DamageVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    targetLayers:
+    - "enum.HumanoidVisualLayers.Chest"
+    - "enum.HumanoidVisualLayers.Head"
+    - "enum.HumanoidVisualLayers.LArm"
+    - "enum.HumanoidVisualLayers.LLeg"
+    - "enum.HumanoidVisualLayers.RArm"
+    - "enum.HumanoidVisualLayers.RLeg"
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#224dff"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: GenericVisualizer
+    visuals:
+      enum.CreamPiedVisuals.Creamed:
+        clownedon: # Not 'creampied' bc I can already see Skyrat complaining about conflicts.
+          True: {visible: true}
+          False: {visible: false}
+  - type: StatusIcon
+    bounds: -0.5,-0.5,0.5,0.5
+  - type: HumanoidAppearance
+    species: Android
+    hideLayersOnEquip:
+    - Hair
+    - Snout
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      0: 0.6
+      50: 0.5
+      80: 0.4
+  - type: FloorOcclusion
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection:
+          MeatBulletImpact
+    soundTypes:
+      Heat:
+        collection:
+          MeatLaserImpact
+  - type: Reactive
+    groups:
+      Flammable: [ Touch ]
+      Extinguish: [ Touch ]
+      Acidic: [Touch, Ingestion]
+    reactions:
+    - reagents: [Water, SpaceCleaner]
+      methods: [Touch]
+      effects:
+      - !type:WashCreamPieReaction
+    - reagents: [ SpaceCleaner, Water, Ale, Absinthe, Dexalin, DexalinPlus, VodkaTonic, Aluminium, Posca, KiraSpecial, TheMartinez, Rewriter, Pilk, CafeLatte, Tea, TonicWater, DryRamen, HotRamen, Ice, IcedGreenTea, IcedTea, IcedCoffee, Grenadine, GreenTea, WhiskeyCola, Cream, WhiskeySoda, WhiteRussian, SnowWhite, Carbon, SuiDream, SyndicateBomb, TequilaSunrise, ThreeMileIsland, ToxinsSpecial, VodkaMartini, Chlorine, Copper, Fluorine, Gold, Gin, MelonLiquor, PoisonWine, NTCahors, Wine, CoffeeLiqueur, AcidSpit, Manhattan, Mojito, Silencer, Singulo, Moonshine, CogChamp, Neurotoxin, Patron, RedMead, SodaWater, SoyLatte, NuclearCola, Sbiten, ScrewdriverCocktail, ManhattanProject, ManlyDorf, Mead, MilkSoy, MilkSpoiled, Nothing, Lemonade, Milk, MilkOat, MilkGoat, Margarita, Martini, AlliesCocktail, Hooch, IcedBeer, Coffee, IrishCream, IrishCoffee, LongIslandIcedTea, IrishCarBomb, HippiesDelight, Aloe, DriestMartini, GinFizz, GinTonic, Goldschlager, Grog, GargleBlaster, ErikaSurprise, AtomicBomb, DoctorsDelight, DevilsKiss, DemonsBlood, B52, CubaLibre, BahamaMama, BeepskySmash, Bilk, BlackRussian, BloodyMary, Booger, BraveBull, Barefoot, BananaHonk, Andalusia, Amasec, Hydrogen, Iodine, Iron, Lithium, Mercury, Potassium, Phosphorus, Radium, Silicon, Silver, Sulfur, Sodium, Uranium, Desoxyephedrine, Ephedrine, Stimulants, ExperimentalStimulants, THC, THCOil, Nicotine, Impedrezene, SpaceDrugs, Nocturine, MuteToxin, NorepinephricAcid, Kvass, Cryptobiolin, Diphenhydramine, Ethylredoxrazine, Arithrazine, Bicaridine, Cryoxadone, Doxarubixadone, Dermaline, Hyronalin, Inaprovaline, Kelotane, Leporazine, Barozine, Phalanximine, PulpedBananaPeel, Siderlac, Spaceacillin, Stellibinin, Synaptizine, TranexamicAcid, Tricordrazine, Lipozine, Omnizine, Ultravasculine, Cognizine, Ethyloxyephedrine, Diphenylmethylamine, Sigynate, JuiceApple, JuiceBanana, JuiceBerry, JuiceCarrot, JuiceGrape, JuiceLemon, JuiceLime, JuiceOrange, JuicePineapple, JuicePotato, JuiceTomato, JuiceWatermelon, Toxin, CarpoToxin, ChloralHydrate, Mold, PolytrinicAcid, FluorosulfuricAcid, SulfuricAcid, UnstableMutagen, HeartbreakerToxin, Lexorin, MindbreakerToxin, Histamine, Theobromine, Amatoxin, VentCrud, Corpium, UncookedAnimalProteins, Vodka, Whiskey, Vermouth, Tequila, Allicin, Sake, Pax, Honk, Cola, ChangelingSting, DrGibb, EnergyDrink, Ethanol, Rum, DeadRum, Cognac, GrapeSoda, BlueCuracao, IceCream, LemonLime, Beer, PwrGame, RootBeer, RootBeerFloat, SpaceMountainWind, SpaceUp, Starkist, FourteenLoko, ShamblersJuice]
+      methods: [ Ingestion, Injection ]
+      effects:
+      - !type:ChemVomit
+      - !type:HealthChange
+        scaleByQuantity: true
+        damage:
+          types:
+            Shock: 0.5
+      - !type:Paralyze
+      - !type:PopupMessage
+        type: Local
+        visualType: Large
+        messages: [ "Зафиксированы короткие замыкания" ]
+      - !type:Emote
+        emote: Sparking
+        showInChat: true
+        probability: 0.8
+    - reagents: [ Water, Ale, Absinthe, Dexalin, DexalinPlus, VodkaTonic, Aluminium, Posca, KiraSpecial, TheMartinez, Rewriter, Pilk, CafeLatte, Tea, TonicWater, DryRamen, HotRamen, Ice, IcedGreenTea, IcedTea, IcedCoffee, Grenadine, GreenTea, WhiskeyCola, Cream, WhiskeySoda, WhiteRussian, SnowWhite, Carbon, SuiDream, SyndicateBomb, TequilaSunrise, ThreeMileIsland, ToxinsSpecial, VodkaMartini, Chlorine, Copper, Fluorine, Gold, Gin, MelonLiquor, PoisonWine, NTCahors, Wine, CoffeeLiqueur, AcidSpit, Manhattan, Mojito, Silencer, Singulo, Moonshine, CogChamp, Neurotoxin, Patron, RedMead, SodaWater, SoyLatte, NuclearCola, Sbiten, ScrewdriverCocktail, ManhattanProject, ManlyDorf, Mead, MilkSoy, MilkSpoiled, Nothing, Lemonade, Milk, MilkOat, MilkGoat, Margarita, Martini, AlliesCocktail, Hooch, IcedBeer, Coffee, IrishCream, IrishCoffee, LongIslandIcedTea, IrishCarBomb, HippiesDelight, Aloe, DriestMartini, GinFizz, GinTonic, Goldschlager, Grog, GargleBlaster, ErikaSurprise, AtomicBomb, DoctorsDelight, DevilsKiss, DemonsBlood, B52, CubaLibre, BahamaMama, BeepskySmash, Bilk, BlackRussian, BloodyMary, Booger, BraveBull, Barefoot, BananaHonk, Andalusia, Amasec, Hydrogen, Iodine, Iron, Lithium, Mercury, Potassium, Phosphorus, Radium, Silicon, Silver, Sulfur, Sodium, Uranium, Desoxyephedrine, Ephedrine, Stimulants, ExperimentalStimulants, THC, THCOil, Nicotine, Impedrezene, SpaceDrugs, Nocturine, MuteToxin, NorepinephricAcid, Kvass, Cryptobiolin, Diphenhydramine, Ethylredoxrazine, Arithrazine, Bicaridine, Cryoxadone, Doxarubixadone, Dermaline, Hyronalin, Inaprovaline, Kelotane, Leporazine, Barozine, Phalanximine, PulpedBananaPeel, Siderlac, Spaceacillin, Stellibinin, Synaptizine, TranexamicAcid, Tricordrazine, Lipozine, Omnizine, Ultravasculine, Cognizine, Ethyloxyephedrine, Diphenylmethylamine, Sigynate, JuiceApple, JuiceBanana, JuiceBerry, JuiceCarrot, JuiceGrape, JuiceLemon, JuiceLime, JuiceOrange, JuicePineapple, JuicePotato, JuiceTomato, JuiceWatermelon, Toxin, CarpoToxin, ChloralHydrate, Mold, PolytrinicAcid, FluorosulfuricAcid, SulfuricAcid, UnstableMutagen, HeartbreakerToxin, Lexorin, MindbreakerToxin, Histamine, Theobromine, Amatoxin, VentCrud, Corpium, UncookedAnimalProteins, Vodka, Whiskey, Vermouth, Tequila, Allicin, Sake, Pax, Honk, Cola, ChangelingSting, DrGibb, EnergyDrink, Ethanol, Rum, DeadRum, Cognac, GrapeSoda, BlueCuracao, IceCream, LemonLime, Beer, PwrGame, RootBeer, RootBeerFloat, SpaceMountainWind, SpaceUp, Starkist, FourteenLoko, ShamblersJuice]
+      methods: [ Touch ]
+      effects:
+      - !type:ChemVomit
+      - !type:HealthChange
+        scaleByQuantity: true
+        damage:
+          types:
+            Shock: 0.5
+      - !type:Paralyze
+      - !type:PopupMessage
+        type: Local
+        visualType: Large
+        messages: [ "Зафиксированы короткие замыкания" ]
+      - !type:Emote
+        emote: Sparking
+        showInChat: true
+        probability: 0.8
+  - type: StatusEffects 
+    allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+    - Stutter
+    - SeeingRainbows
+    - Electrocution
+    - Drunk
+    - SlurredSpeech
+    - RatvarianLanguage
+    - PressureImmunity
+    - Muted
+    - ForcedSleep #Надо ли???????????????????????????????????????????????????????????????????????????????????????
+    - Pacified
+    - StaminaModifier
+    - Flashed
+    - RadiationProtection
+    - Drowsiness
+  - type: Body
+    prototype: Android
+    requiredLegs: 2
+  - type: Identity
+  - type: IdExaminable
+  - type: Hands
+  - type: ComplexInteraction
+  - type: FloatingVisuals
+  - type: Climbing
+  - type: Cuffable
+  - type: Ensnareable
+    sprite: Objects/Misc/ensnare.rsi
+    state: icon
+  - type: AnimationPlayer
+  - type: Buckle
+  - type: SSDIndicator
+  - type: StandingState
+  - type: InteractionPopup
+    successChance: 1
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: CreamPied
+  - type: Stripping
+  - type: Puller
+  - type: Speech
+    speechSounds: Pai
+  - type: Vocal
+    sounds:
+      Male: MaleHuman
+      Female: FemaleHuman
+      Unsexed: MaleHuman
+  - type: Emoting
+  - type: BodyEmotes
+    soundsId: GeneralBodyEmotes
+  - type: Grammar
+    attributes:
+      proper: true
+  - type: MobPrice
+    price: 6000 # Android biocomponents are appreciated in the market...
+    deathPenalty: 1000
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+# BaseMobSpeciesOrganic
+  # Other
+  - type: TemperatureSpeed
+    thresholds:
+      275: 0.58
+      250: 0.5
+      240: 0.4
+  - type: Butcherable
+    butcheringType: Spike # TODO human.
+    spawned:
+      - id: Plastic
+        amount: 5
+# BaseMobAndroid
+  - type: Icon
+    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    state: full
+# Компоненты для андроида
+  - type: Repairable
+    fuelCost: 30
+    doAfterDelay: 10
+    allowSelfRepair: true
+  - type: ZombieImmune
+  - type: TypingIndicator
+    proto: robot
+  - type: PointLight
+    enabled: true
+    netsync: false
+    radius: 1.1 #smallest possible
+    color: "#62edff"
+  - type: UnpoweredFlashlight
+  - type: DamageOnInteractProtection
+    damageProtection:
+      flatReductions:
+        Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
+  - type: Hunger
+
+
+- type: entity
+  id: MobAndroidDummy
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InventorySlots
+  - type: Hands
+  - type: ComplexInteraction
+  - type: ContainerContainer
+  - type: Icon
+    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    state: full
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    layers:
+    - map: [ "enum.HumanoidVisualLayers.Chest" ]
+    - map: [ "enum.HumanoidVisualLayers.Head" ]
+    - map: [ "enum.HumanoidVisualLayers.Snout" ]
+    - map: [ "enum.HumanoidVisualLayers.Eyes" ]
+    - map: [ "enum.HumanoidVisualLayers.RArm" ]
+    - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: [ "enum.HumanoidVisualLayers.RLeg" ]
+    - map: [ "enum.HumanoidVisualLayers.LLeg" ]
+    - map: ["jumpsuit"]
+    - map: ["enum.HumanoidVisualLayers.LFoot"]
+    - map: ["enum.HumanoidVisualLayers.RFoot"]
+    - map: ["enum.HumanoidVisualLayers.LHand"]
+    - map: ["enum.HumanoidVisualLayers.RHand"]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "gloves" ]
+    - map: [ "shoes" ]
+    - map: [ "ears" ]
+    - map: [ "outerClothing" ]
+    - map: [ "eyes" ]
+    - map: [ "belt" ]
+    - map: [ "id" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+    - map: [ "enum.HumanoidVisualLayers.Hair" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+    - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Tail" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+    - map: [ "pocket1" ]
+    - map: [ "pocket2" ]
+  - type: Appearance
+  - type: HumanoidAppearance
+    species: Android
+  - type: Body
+    prototype: Android
+    requiredLegs: 2
+  - type: UserInterface
+    interfaces:
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+  - type: Inventory
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female

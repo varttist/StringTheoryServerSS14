@@ -1,0 +1,24 @@
+- type: latheRecipe
+  id: EmergencyBiogasStimulator
+  result: EmergencyBiogasStimulator
+  completetime: 1
+  materials:
+    Steel: 100
+    Plastic: 100
+
+- type: latheRecipe
+  id: BioTube
+  result: BioTube1
+  completetime: 1
+  materials:
+    Steel: 50
+    Plastic: 250
+
+- type: latheRecipe
+  id: TiriumPack
+  result: TiriumPack1
+  completetime: 1
+  materials:
+    Steel: 50
+    Plastic: 100
+    Plasma: 1  
