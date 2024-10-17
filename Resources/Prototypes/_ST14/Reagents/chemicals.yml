@@ -1,0 +1,45 @@
+- type: reagent
+  id: Tirium
+  name: тириум
+  group: Biological
+  desc: Голубая кровь андроида...
+  flavor: химически-масляно
+  color: "#224dff"
+  metamorphicSprite:
+    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    state: icon_empty_tirium_glass
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  recognizable: true
+  physicalDesc: reagent-physical-desc-viscous
+  slippery: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2.0
+    Medicine:
+      effects:
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Bloodsucker
+        damage:
+          types:
+            Cold: 3
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Android
+        damage:
+          types:
+            Bloodloss: -0.3 
+  plantMetabolism:
+    - !type:PlantAdjustToxins
+      amount: 0.5
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6
+  viscosity: 0.1
