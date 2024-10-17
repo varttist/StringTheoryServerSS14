@@ -118,6 +118,9 @@
     unlitIdleState: unlit
     unlitRunningState: unlit-building
     staticRecipes:
+      - EmergencyBiogasStimulator
+      - BioTube
+      - TiriumPack
       - Wirecutter
       - Igniter
       - Signaller
