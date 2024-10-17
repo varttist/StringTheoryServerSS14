@@ -210,6 +210,10 @@
         conditions:
         - !type:OrganType
           type: Slime
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: Android
       # Converts Nitrogen into CO2
       - !type:ModifyLungGas
         conditions:
@@ -225,6 +229,13 @@
         ratios:
           NitrousOxide: 1.0
           Nitrogen: -1.0
+      - !type:ModifyLungGas
+        conditions:
+        - !type:OrganType
+          type: Android
+        ratios:
+          NitrousOxide: 4.0
+          Nitrogen: -2.0
 
 - type: reagent
   id: NitrousOxide
