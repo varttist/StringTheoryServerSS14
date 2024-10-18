@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Sprites by just_art_",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "robotic_r_arm_led",
+      "directions": 4
+    },
+    {
+      "name": "robotic_l_arm_led",
+      "directions": 4
+    },
+    {
+      "name": "robotic_r_leg_led",
+      "directions": 4
+    },
+    {
+      "name": "robotic_l_leg_led",
+      "directions": 4
+    },
+    {
+      "name": "robotic_torso_led",
+      "directions": 4
+    }
+  ]
+}

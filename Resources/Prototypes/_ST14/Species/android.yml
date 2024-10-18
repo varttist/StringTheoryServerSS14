@@ -76,83 +76,83 @@
 - type: humanoidBaseSprite
   id: MobAndroidHeadMale
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_head
 
 - type: humanoidBaseSprite
   id: MobAndroidHeadFemale
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_head_f
 
 - type: humanoidBaseSprite
   id: MobAndroidHead
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_head
 
 - type: humanoidBaseSprite
   id: MobAndroidTorso
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_torso
 
 - type: humanoidBaseSprite
   id: MobAndroidTorsoMale
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_torso
 
 - type: humanoidBaseSprite
   id: MobAndroidTorsoFemale
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_torso_f
 
 - type: humanoidBaseSprite
   id: MobAndroidLLeg
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_l_leg
 
 - type: humanoidBaseSprite
   id: MobAndroidLArm
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_l_arm
 
 - type: humanoidBaseSprite
   id: MobAndroidLHand
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_l_hand
 
 - type: humanoidBaseSprite
   id: MobAndroidLFoot
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_l_foot
 
 - type: humanoidBaseSprite
   id: MobAndroidRLeg
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_r_leg
 
 - type: humanoidBaseSprite
   id: MobAndroidRArm
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_r_arm
 
 - type: humanoidBaseSprite
   id: MobAndroidRHand
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_r_hand
 
 - type: humanoidBaseSprite
   id: MobAndroidRFoot
   baseSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_r_foot
