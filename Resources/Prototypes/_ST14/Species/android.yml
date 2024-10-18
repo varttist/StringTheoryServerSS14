@@ -61,98 +61,85 @@
       required: false
 
 - type: humanoidBaseSprite
-  id: MobHumanoidEyes
-  baseSprite:
-    sprite: Mobs/Customization/eyes.rsi
-    state: eyes
-
-- type: humanoidBaseSprite
-  id: MobHumanoidAnyMarking
-
-- type: humanoidBaseSprite
-  id: MobHumanoidMarkingMatchSkin
-  markingsMatchSkin: true
-
-- type: humanoidBaseSprite
   id: MobAndroidHeadMale
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_head
+    state: head_m
 
 - type: humanoidBaseSprite
   id: MobAndroidHeadFemale
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_head_f
+    state: head_f
 
 - type: humanoidBaseSprite
   id: MobAndroidHead
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_head
+    state: head_m
 
 - type: humanoidBaseSprite
   id: MobAndroidTorso
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_torso
+    state: torso_m
 
 - type: humanoidBaseSprite
   id: MobAndroidTorsoMale
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_torso
+    state: torso_m
 
 - type: humanoidBaseSprite
   id: MobAndroidTorsoFemale
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_torso_f
+    state: torso_f
 
 - type: humanoidBaseSprite
   id: MobAndroidLLeg
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_l_leg
+    state: l_leg
 
 - type: humanoidBaseSprite
   id: MobAndroidLArm
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_l_arm
+    state: l_arm
 
 - type: humanoidBaseSprite
   id: MobAndroidLHand
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_l_hand
+    state: l_hand
 
 - type: humanoidBaseSprite
   id: MobAndroidLFoot
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_l_foot
+    state: l_foot
 
 - type: humanoidBaseSprite
   id: MobAndroidRLeg
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_r_leg
+    state: r_leg
 
 - type: humanoidBaseSprite
   id: MobAndroidRArm
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_r_arm
+    state: r_arm
 
 - type: humanoidBaseSprite
   id: MobAndroidRHand
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_r_hand
+    state: r_hand
 
 - type: humanoidBaseSprite
   id: MobAndroidRFoot
   baseSprite:
     sprite: _ST14/Mobs/Species/Android/parts.rsi
-    state: robotic_r_foot
+    state: r_foot

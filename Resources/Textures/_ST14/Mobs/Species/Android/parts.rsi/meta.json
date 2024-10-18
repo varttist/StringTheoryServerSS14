@@ -11,51 +11,51 @@
       "name": "full"
     },
     {
-      "name": "robotic_head",
+      "name": "head_m",
       "directions": 4
     },
     {
-      "name": "robotic_head_f",
+      "name": "head_f",
       "directions": 4
     },
     {
-      "name": "robotic_l_arm",
+      "name": "l_arm",
       "directions": 4
     },
     {
-      "name": "robotic_l_foot",
+      "name": "l_foot",
       "directions": 4
     },
     {
-      "name": "robotic_l_hand",
+      "name": "l_hand",
       "directions": 4
     },
     {
-      "name": "robotic_l_leg",
+      "name": "l_leg",
       "directions": 4
     },
     {
-      "name": "robotic_r_arm",
+      "name": "r_arm",
       "directions": 4
     },
     {
-      "name": "robotic_r_foot",
+      "name": "r_foot",
       "directions": 4
     },
     {
-      "name": "robotic_r_hand",
+      "name": "r_hand",
       "directions": 4
     },
     {
-      "name": "robotic_r_leg",
+      "name": "r_leg",
       "directions": 4
     },
     {
-      "name": "robotic_torso",
+      "name": "torso_m",
       "directions": 4
     },
     {
-      "name": "robotic_torso_f",
+      "name": "torso_f",
       "directions": 4
     }
   ]
