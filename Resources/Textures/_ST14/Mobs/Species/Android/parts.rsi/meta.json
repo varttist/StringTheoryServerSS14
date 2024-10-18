@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Sprites by just_art_",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "full"
+    },
+    {
+      "name": "robotic_head",
+      "directions": 4
+    },
+    {
+      "name": "robotic_head_f",
+      "directions": 4
+    },
+    {
+      "name": "robotic_l_arm",
+      "directions": 4
+    },
+    {
+      "name": "robotic_l_foot",
+      "directions": 4
+    },
+    {
+      "name": "robotic_l_hand",
+      "directions": 4
+    },
+    {
+      "name": "robotic_l_leg",
+      "directions": 4
+    },
+    {
+      "name": "robotic_r_arm",
+      "directions": 4
+    },
+    {
+      "name": "robotic_r_foot",
+      "directions": 4
+    },
+    {
+      "name": "robotic_r_hand",
+      "directions": 4
+    },
+    {
+      "name": "robotic_r_leg",
+      "directions": 4
+    },
+    {
+      "name": "robotic_torso",
+      "directions": 4
+    },
+    {
+      "name": "robotic_torso_f",
+      "directions": 4
+    }
+  ]
+}
