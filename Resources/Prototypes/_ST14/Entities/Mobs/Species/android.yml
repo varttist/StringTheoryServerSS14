@@ -413,7 +413,7 @@
         amount: 5
 # BaseMobAndroid
   - type: Icon
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: full
 # Компоненты для андроида
   - type: Repairable
@@ -445,7 +445,7 @@
   - type: ComplexInteraction
   - type: ContainerContainer
   - type: Icon
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: full
   - type: Sprite
     drawdepth: Mobs

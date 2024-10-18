@@ -6,8 +6,8 @@
   flavor: химически-масляно
   color: "#224dff"
   metamorphicSprite:
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
-    state: icon_empty_tirium_glass
+    sprite: _ST14/Objects/Consumable/Drinks/tiriumglass.rsi
+    state: icon_empty
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false

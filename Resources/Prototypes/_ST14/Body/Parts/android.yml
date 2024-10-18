@@ -24,7 +24,7 @@
   parent: PartAndroid
   components:
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_torso
   - type: BodyPart
     partType: Torso
@@ -35,7 +35,7 @@
   parent: PartAndroid
   components:
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_head
   - type: BodyPart
     partType: Head
@@ -52,7 +52,7 @@
   parent: PartAndroid
   components:
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_l_arm
   - type: BodyPart
     partType: Arm
@@ -64,7 +64,7 @@
   parent: PartAndroid
   components:
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_r_arm
   - type: BodyPart
     partType: Arm
@@ -76,7 +76,7 @@
   parent: PartAndroid
   components:
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_l_hand
   - type: BodyPart
     partType: Hand
@@ -88,7 +88,7 @@
   parent: PartAndroid
   components:
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_r_hand
   - type: BodyPart
     partType: Hand
@@ -100,7 +100,7 @@
   parent: PartAndroid
   components:
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_l_leg
   - type: BodyPart
     partType: Leg
@@ -113,7 +113,7 @@
   parent: PartAndroid
   components:
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_r_leg
   - type: BodyPart
     partType: Leg
@@ -126,7 +126,7 @@
   parent: PartAndroid
   components:
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_l_foot
   - type: BodyPart
     partType: Foot
@@ -138,7 +138,7 @@
   parent: PartAndroid
   components:
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/parts.rsi
     state: robotic_r_foot
   - type: BodyPart
     partType: Foot

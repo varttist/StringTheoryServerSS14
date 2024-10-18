@@ -4,7 +4,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Mobs/Species/Android/organs.rsi
   - type: Organ
 
 

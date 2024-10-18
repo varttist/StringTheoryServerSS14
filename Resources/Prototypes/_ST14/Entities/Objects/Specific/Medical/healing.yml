@@ -5,7 +5,7 @@
   id: EmergencyBiogasStimulator
   components:
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Objects/Specific/Medical/medical.rsi
     state: emergency_android_stimulator
   - type: Healing
     damageContainers:
@@ -32,7 +32,7 @@
     tags:
     - Gauze
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Objects/Specific/Medical/medical.rsi
     state: bio_tube
   - type: Healing
     damageContainers:
@@ -72,7 +72,7 @@
     tags:
     - Bloodpack
   - type: Sprite
-    sprite: /Uploaded/Androids/bio_stock_parts.rsi
+    sprite: _ST14/Objects/Specific/Medical/medical.rsi
     state: tirium_pack
   - type: Healing
     damageContainers:
