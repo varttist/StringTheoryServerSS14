@@ -90,6 +90,8 @@
         - NukeDisk
     alertLevelOnActivate: delta
     alertLevelOnDeactivate: green
+    alertTime: 1
+    alertSound: /Audio/Machines/Nuke/confirm_beep.ogg
   - type: InteractionOutline
   - type: ActivatableUI
     key: enum.NukeUiKey.Key
