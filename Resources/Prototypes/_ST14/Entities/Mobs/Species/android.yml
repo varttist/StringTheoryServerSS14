@@ -40,6 +40,8 @@
   - type: MindContainer
     showExamineInfo: true
   - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 4
   - type: TTS # Corvax-TTS
   - type: RequireProjectileTarget
     active: False
@@ -272,7 +274,6 @@
     - Snout
   - type: SlowOnDamage
     speedModifierThresholds:
-      0: 0.6
       50: 0.5
       80: 0.4
   - type: FloorOcclusion
@@ -433,8 +434,20 @@
     damageProtection:
       flatReductions:
         Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
-  - type: Hunger
-
+  - type: WiresPanel
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot { }
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+    fitsInCharger: true
+  - type: PowerCellDraw
+    drawRate: 0.6
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+  - type: UnblockableSpeech
 
 - type: entity
   id: MobAndroidDummy
