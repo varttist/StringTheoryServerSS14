@@ -1,0 +1,11 @@
+name: "Предложение"
+description: "Ваши идеи, предложения и т.п."
+labels: ["offer"]
+body:
+  - type: textarea
+    id: description
+    validations:
+      required: true
+    attributes:
+      label: "Описание"
+      description: "Опишите свою идею/предложение как можно подробнее"
