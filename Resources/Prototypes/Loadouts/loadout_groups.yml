@@ -773,6 +773,14 @@
   - StationEngineerPDA
   - SeniorEngineerPDA
 
+# ST14 added [begin]
+- type: loadoutGroup
+  id: AtmosphericTechnicianHead
+  name: loadout-group-atmospheric-technician-head
+  loadouts:
+  - AtmosphericTechnicianBeret
+# ST14 added [end]
+
 - type: loadoutGroup
   id: AtmosphericTechnicianJumpsuit
   name: loadout-group-atmospheric-technician-jumpsuit

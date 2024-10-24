@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatAtmosBeret
+  name: atmospheric technician beret
+  description: A blue beret expressing the pride and grandeur of the station's atmofer department.
+  components:
+    - type: Sprite
+      sprite: _ST14/Clothing/Head/Hats/atmos_beret.rsi
+    - type: Clothing
+      sprite: _ST14/Clothing/Head/Hats/atmos_beret.rsi
