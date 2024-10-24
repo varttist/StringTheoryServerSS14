@@ -92,7 +92,7 @@ namespace Content.Client.Stylesheets
 
         public static readonly Color NanoGold = Color.FromHex("#9bc1d0"); //ST14 Changed
         public static readonly Color GoodGreenFore = Color.FromHex("#31843E");
-        public static readonly Color ConcerningOrangeFore = Color.FromHex("#A5762F");
+        public static readonly Color ConcerningOrangeFore = Color.FromHex("#9bc1d0"); //ST14 Changed
         public static readonly Color DangerousRedFore = Color.FromHex("#BB3232");
         public static readonly Color DisabledFore = Color.FromHex("#5A5A5A");
 
@@ -100,7 +100,7 @@ namespace Content.Client.Stylesheets
         public static readonly Color ButtonColorDefaultRed = Color.FromHex("#D43B3B").WithAlpha(0.6f); //ST14 Changed
         public static readonly Color ButtonColorHovered = Color.FromHex("#81c7e2").WithAlpha(0.6f); //ST14 Changed
         public static readonly Color ButtonColorHoveredRed = Color.FromHex("#DF6B6B").WithAlpha(0.6f); //ST14 Changed
-        public static readonly Color ButtonColorPressed = Color.FromHex("#4e7167").WithAlpha(0.6f); //ST14 Changed
+        public static readonly Color ButtonColorPressed = Color.FromHex("#87e7d4").WithAlpha(0.6f); //ST14 Changed
         public static readonly Color ButtonColorDisabled = Color.FromHex("#0c3a4c").WithAlpha(0.6f); //ST14 Changed
 
         public static readonly Color ButtonColorCautionDefault = Color.FromHex("#ab3232").WithAlpha(0.6f); //ST14 Changed
@@ -150,7 +150,7 @@ namespace Content.Client.Stylesheets
         public const string StyleClassButtonColorRed = "ButtonColorRed";
         public const string StyleClassButtonColorGreen = "ButtonColorGreen";
 
-        public static readonly Color ChatBackgroundColor = Color.FromHex("#25252ADD");
+        public static readonly Color ChatBackgroundColor = Color.FromHex("#090812");
 
         //Bwoink
         public const string StyleClassPinButtonPinned = "pinButtonPinned";
