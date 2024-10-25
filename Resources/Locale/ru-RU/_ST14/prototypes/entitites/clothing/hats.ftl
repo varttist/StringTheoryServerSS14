@@ -1,2 +1,2 @@
-ent-ClothingHeadHatAtmosBeret = берет атмосферного техника
+ent-ST14ClothingHeadHatAtmosBeret = берет атмосферного техника
     .desc = Голубой берет, выражающий гордость и величие атмоферного отдела станции.

@@ -3,7 +3,7 @@
 - type: loadout
   id: AtmosphericTechnicianBeret
   equipment:
-    head: ClothingHeadHatAtmosBeret
+    head: ST14ClothingHeadHatAtmosBeret
 # ST14 added [end]
 
 # Jumpsuit
