@@ -1,0 +1,34 @@
+- type: entity
+  id: ST14InspectionCaseEngineeringFilled
+  parent: ST14InspectionCaseEngineering
+  suffix: Filled
+  components:
+    - type: StorageFill
+      contents:
+        - id: ClothingHeadHatHardhatBlue
+        - id: ST14ClothingEyesGoggles
+        - id: ClothingOuterVestHazard
+        - id: Multitool
+        - id: FlashlightLantern
+        - id: BoxFolderClipboard
+        - id: BoxFolderYellow
+
+- type: entity
+  id: ST14InspectionCaseMedicalFilled
+  parent: ST14InspectionCaseMedical
+  suffix: Filled
+  components:
+    - type: StorageFill
+      contents:
+        - id: ClothingOuterCoatLab
+        - id: BoxMouthSwab
+        - id: ClothingHandsGlovesLatex
+        - id: ClothingHandsGlovesLatex
+        - id: ClothingMaskSterile
+        - id: ClothingHeadHatSurgcapBlue
+        - id: BoxFolderClipboard
+        - id: BoxFolderBlue
+        - id: BaseChemistryEmptyVial
+        - id: BaseChemistryEmptyVial
+        - id: BaseChemistryEmptyVial
+        - id: Dropper

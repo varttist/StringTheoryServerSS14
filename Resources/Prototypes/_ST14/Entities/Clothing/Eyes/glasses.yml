@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingEyesBase
+  id: ST14ClothingEyesGoggles
+  name: goggles
+  description: Plastic glasses to protect your eyes from dust and particles.
+  components:
+  - type: Sprite
+    sprite: _ST14/Clothing/Eyes/Glasses/goggles.rsi
+  - type: Clothing
+    sprite: _ST14/Clothing/Eyes/Glasses/goggles.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon

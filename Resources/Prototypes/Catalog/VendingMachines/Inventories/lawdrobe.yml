@@ -15,6 +15,9 @@
     ClothingHeadsetIAA: 2 # Corvax-IAA
     ClothingNeckLawyerbadge: 2
     BriefcaseBrown: 2
+    ST14Case: 1 # ST14 added
+    ST14InspectionCaseMedicalFilled: 1 # ST14 added
+    ST14InspectionCaseEngineeringFilled: # ST14 added
     BookSpaceLaw: 3
     # Corvax-LawyerDrip-Start
     ClothingHandsGlovesColorWhite: 1

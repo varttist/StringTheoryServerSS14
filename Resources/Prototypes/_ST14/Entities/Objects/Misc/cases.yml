@@ -1,0 +1,44 @@
+- type: entity
+  parent: BriefcaseBase
+  id: ST14Case
+  name: case
+  components:
+  - type: Sprite
+    sprite: _ST14/Objects/Storage/Cases/case.rsi
+    state: icon
+  - type: Item
+    sprite: _ST14/Objects/Storage/Cases/case.rsi
+
+- type: entity
+  parent: BriefcaseBase
+  id: ST14InspectionCaseEngineering
+  name: engineering department inspection case
+  description: Contains a set of tools and clothing for the audit of the engineering department.
+  components:
+  - type: Sprite
+    sprite: _ST14/Objects/Storage/Cases/case.rsi
+    layers:
+    - state: icon
+    - state: layer_eng
+  - type: Item
+    sprite: _ST14/Objects/Storage/Cases/case.rsi
+    layers:
+    - state: icon
+    - state: layer_eng
+
+- type: entity
+  parent: BriefcaseBase
+  id: ST14InspectionCaseMedical
+  name: medical department inspection case
+  description: Contains a set of tools and clothing for the audit of the medical department.
+  components:
+  - type: Sprite
+    sprite: _ST14/Objects/Storage/Cases/case.rsi
+    layers:
+    - state: icon
+    - state: layer_med
+  - type: Item
+    sprite: _ST14/Objects/Storage/Cases/case.rsi
+    layers:
+    - state: icon
+    - state: layer_med
