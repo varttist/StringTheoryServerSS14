@@ -22,9 +22,6 @@
                                     <Button Name="RandomizeEverythingButton" HorizontalAlignment="Center"
                                             HorizontalExpand="False" MaxWidth="256"
                                             Text="{Loc 'humanoid-profile-editor-randomize-everything-button'}" />
-                                    <RichTextLabel Name="WarningLabel" HorizontalExpand="False"
-                                                   VerticalExpand="True" MaxWidth="425"
-                                                   HorizontalAlignment="Left" />
                                 </BoxContainer>
                             </ui:HighlightedContainer>
                         </BoxContainer>
