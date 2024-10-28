@@ -166,7 +166,6 @@ namespace Content.Client.Lobby.UI
             NameEdit.OnTextChanged += args => { SetName(args.Text); };
             NameRandomize.OnPressed += args => RandomizeName();
             RandomizeEverythingButton.OnPressed += args => { RandomizeEverything(); };
-            WarningLabel.SetMarkup($"[color=red]{Loc.GetString("humanoid-profile-editor-naming-rules-warning")}[/color]");
 
             #endregion Name
 
@@ -879,7 +878,7 @@ namespace Content.Client.Lobby.UI
 
                     category.AddChild(new PanelContainer
                     {
-                        PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#2e6d85").WithAlpha(0.7f) },
+                        PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#2e6d85").WithAlpha(0.7f) }, //ST14 Changed
                         Children =
                         {
                             new Label
