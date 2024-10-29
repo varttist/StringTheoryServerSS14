@@ -158,7 +158,8 @@ namespace Content.Client.Stylesheets
 
         //ST14 Colors
         public static readonly Color ST14_DarkBlue = Color.FromHex("#0d0c1b");
-        
+        public static readonly Color ST14_LightDarkBlue = Color.FromHex("#1f1d3d");
+
         public override Stylesheet Stylesheet { get; }
 
         public StyleNano(IResourceCache resCache) : base(resCache)
@@ -433,7 +434,7 @@ namespace Content.Client.Stylesheets
             placeholder.SetExpandMargin(StyleBox.Margin.All, -5);
             placeholder.Mode = StyleBoxTexture.StretchMode.Tile;
 
-            var itemListBackgroundSelected = new StyleBoxFlat { BackgroundColor = ST14_DarkBlue.WithAlpha(0.7f) }; //ST14 Changed
+            var itemListBackgroundSelected = new StyleBoxFlat { BackgroundColor = ST14_LightDarkBlue.WithAlpha(0.7f) }; //ST14 Changed
             itemListBackgroundSelected.SetContentMarginOverride(StyleBox.Margin.Vertical, 2);
             itemListBackgroundSelected.SetContentMarginOverride(StyleBox.Margin.Horizontal, 4);
             var itemListItemBackgroundDisabled = new StyleBoxFlat { BackgroundColor = new Color(10, 10, 12) };
