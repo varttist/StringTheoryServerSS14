@@ -1,0 +1,32 @@
+﻿[game]
+hostname = "String Theory Server"
+desc = "wtf? No rp??? Only fun?!"
+map_pool = "ST14DefaultMapPool"
+maxplayers = 50
+soft_max_players = 40
+map_rotation = true
+role_timers = false
+peaceful_end = false
+
+[atmos]
+space_wind = true
+
+[biomass]
+easy_mode = false
+
+[rules]
+time = 10.0
+
+[whitelist]
+enabled = false
+
+[ic]
+flavor_text = true
+punctuation = true
+
+[shuttle]
+auto_call_time = 0
+
+[hub]
+advertise = false
+tags = "lang:ru,rp:low,region:eu_e"
