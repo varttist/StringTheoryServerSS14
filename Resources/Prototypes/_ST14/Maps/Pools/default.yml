@@ -1,0 +1,4 @@
+- type: gameMapPool
+  id: ST14DefaultMapPool
+  maps:
+  - StringOmega
