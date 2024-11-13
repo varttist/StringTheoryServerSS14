@@ -8,6 +8,9 @@ map_rotation = true
 role_timers = false
 peaceful_end = false
 
+[console]
+login_host_user = Vanic
+
 [atmos]
 space_wind = true
 
