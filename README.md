@@ -27,10 +27,10 @@ Space Station 14 это ремейк SS13, который работает на 
 
 ## Лицензия
 
-Весь код репозитория лицензирован под [MIT](https://github.com/space-syndicate/space-station-14/blob/master/LICENSE.TXT).
+Большая часть кода репозитория лицензирован под [MIT](https://github.com/VanicGame/StringTheoryServerSS14/blob/master/LICENSE_MIT.TXT), но распростроняется и должен распростроняться на условиях [GNU Affero General Public License version 3.0](https://github.com/VanicGame/StringTheoryServerSS14/blob/master/LICENSE_AGPLv3.TXT).
 
 Большинство ассетов лицензированы под [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), если не указано иное. Ассеты имеют свою лицензию и авторские права в файле метаданных. [Пример](https://github.com/space-syndicate/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
 
 Обратите внимание, что некоторые ассеты лицензированы на некоммерческой основе [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) или аналогичной некоммерческой лицензией, и их необходимо удалить, если вы хотите использовать этот проект в коммерческих целях.
 
-Некоторый контент взят из проекта [Corvax Next](https://github.com/space-syndicate/space-station-14-next) на условиях лицензии GNU Affero General Public License version 3.0, если не указано иное.
+Некоторый контент взят из проекта [Corvax Next](https://github.com/space-syndicate/space-station-14-next) на условиях лицензии [GNU Affero General Public License version 3.0](https://github.com/VanicGame/StringTheoryServerSS14/blob/master/LICENSE_AGPLv3.TXT).
