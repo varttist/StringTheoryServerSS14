@@ -97,4 +97,20 @@ namespace Content.Shared.Lathe
     /// </summary>
     [ByRefEvent]
     public readonly record struct LatheStartPrintingEvent(LatheRecipePrototype Recipe);
+
+    // ST14 add [begin]
+    /// <summary>
+    /// Event is called when the lathe creates something.
+    /// </summary>
+    [ByRefEvent]
+    public sealed class LatheResultSpawnEvent : EntityEventArgs
+    {
+        public readonly EntityUid Lathe;
+
+        public LatheResultSpawnEvent(EntityUid lathe)
+        {
+            Lathe = lathe;
+        }
+    }
+    // ST14 add [end]
 }
