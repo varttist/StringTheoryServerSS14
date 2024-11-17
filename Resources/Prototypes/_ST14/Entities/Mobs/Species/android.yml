@@ -340,17 +340,15 @@
     - Stutter
     - SeeingRainbows
     - Electrocution
-    - Drunk
     - SlurredSpeech
     - RatvarianLanguage
     - PressureImmunity
     - Muted
-    - ForcedSleep #Надо ли???????????????????????????????????????????????????????????????????????????????????????
+    - ForcedSleep
     - Pacified
     - StaminaModifier
     - Flashed
     - RadiationProtection
-    - Drowsiness
   - type: Body
     prototype: Android
     requiredLegs: 2
@@ -412,6 +410,7 @@
     spawned:
       - id: Plastic
         amount: 5
+  - type: Blindable
 # BaseMobAndroid
   - type: Icon
     sprite: _ST14/Mobs/Species/Android/parts.rsi
@@ -447,7 +446,9 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
   - type: UnblockableSpeech
+  - type: Android #ST14 Component
 
 - type: entity
   id: MobAndroidDummy
