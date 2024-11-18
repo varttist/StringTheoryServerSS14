@@ -1,6 +1,9 @@
 using Content.Shared.Containers.ItemSlots;
+using Content.Shared.Movement.Components;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.PowerCell.Components;
+using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Wires;
 using Robust.Shared.Containers;
 
@@ -21,6 +24,7 @@ public abstract partial class SharedAndroidSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<AndroidComponent, ItemSlotEjectAttemptEvent>(OnItemSlotEjectAttempt);
+        SubscribeLocalEvent<AndroidComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
     }
 
     public void OnItemSlotInsertAttempt(EntityUid uid, AndroidComponent component, ItemSlotInsertAttemptEvent args)
@@ -53,5 +57,21 @@ public abstract partial class SharedAndroidSystem : EntitySystem
 
         if (!panel.Open || args.User == uid)
             args.Cancelled = true;
+    }
+
+    private void OnRefreshMovementSpeedModifiers(EntityUid uid, AndroidComponent component, RefreshMovementSpeedModifiersEvent args)
+    {
+        if (!TryComp<MovementSpeedModifierComponent>(uid, out var movement))
+            return;
+
+        if (component.hasCharge)
+        {
+            args.ModifySpeed(1f, 1f);
+        }
+        else if (args.SprintSpeedModifier == 1f)
+        {
+            var sprintDif = movement.BaseWalkSpeed / movement.BaseSprintSpeed;
+            args.ModifySpeed(1f, sprintDif);
+        }
     }
 }
