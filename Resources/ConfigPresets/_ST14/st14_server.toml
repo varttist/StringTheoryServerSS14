@@ -33,3 +33,10 @@ auto_call_time = 0
 [hub]
 advertise = false
 tags = "lang:ru,rp:low,region:eu_e"
+
+[ooc]
+enable_during_round = true
+
+[looc]
+enabled_dead = true
+enabled_crit = true
