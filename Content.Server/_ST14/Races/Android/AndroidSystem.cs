@@ -110,6 +110,8 @@ public sealed partial class AndroidSystem : SharedAndroidSystem
 
     private void UpdateBattery(Entity<AndroidComponent> ent)
     {
+        if (!_mind.TryGetMind(ent, out _, out _)) return;
+
         if (!_powerCell.TryGetBatteryFromSlot(ent, out var battery))
         {
             _alerts.ClearAlert(ent, ent.Comp.BatteryAlert);
