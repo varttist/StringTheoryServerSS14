@@ -48,10 +48,8 @@ public sealed partial class AndroidSystem : SharedAndroidSystem
 
     private void OnWakeIfDeactivated(EntityUid uid, AndroidComponent component, WakeActionEvent args)
     {
-        //Log.Debug("WakeCatch_____________________________");
         if (!component.hasCharge && !_statusEffects.HasStatusEffect(uid, StatusEffectKey))
         {
-            //Log.Debug("TrueWake_____________________________");
             component.timerUntilSleep = _random.NextFloat(component.minTimeUntilSleep, component.maxTimeUntilSleep);
             component.startTimer = true;
         }
@@ -68,12 +66,10 @@ public sealed partial class AndroidSystem : SharedAndroidSystem
             {
                 if (comp.timerUntilSleep > 0)
                 {
-                    //Log.Debug("timer!=0_____________________________" + comp.timerUntilSleep);
                     comp.timerUntilSleep -= frameTime;
                 }
                 else if (!comp.hasCharge)
                 {
-                    //Log.Debug("Timer==0_____________________________");
                     comp.startTimer = false;
                     ChangeAndroidState((uid, comp), false);
                 }
@@ -86,7 +82,7 @@ public sealed partial class AndroidSystem : SharedAndroidSystem
         if (args.NewMobState == MobState.Alive)
         {
             if (_mind.TryGetMind(uid, out _, out _)) _powerCell.SetDrawEnabled(uid, true);
-            //else _powerCell.SetDrawEnabled(uid, false); Off for test
+            else _powerCell.SetDrawEnabled(uid, false);
         }
         else
         {
@@ -104,26 +100,22 @@ public sealed partial class AndroidSystem : SharedAndroidSystem
     private void OnPowerCellSlotEmpty(EntityUid uid, AndroidComponent component, ref PowerCellSlotEmptyEvent args)
     {
         UpdateBattery((uid, component));
-        //Log.Debug("PowerSellEmpty_____________________________");
     }
 
     private void OnItemSlotInsertAttempt(EntityUid uid, AndroidComponent component, ItemSlotInsertAttemptEvent args)
     {
         base.OnItemSlotInsertAttempt(uid, component, args);
         UpdateBattery((uid, component));
-        //Log.Debug("EntInsert_____________________________");
     }
 
     private void UpdateBattery(Entity<AndroidComponent> ent)
     {
-        //Log.Debug("UpdateBattery_____________________________");
         if (!_powerCell.TryGetBatteryFromSlot(ent, out var battery))
         {
             _alerts.ClearAlert(ent, ent.Comp.BatteryAlert);
             _alerts.ShowAlert(ent, ent.Comp.NoBatteryAlert);
 
             ChangeAndroidState(ent, false);
-            //Log.Debug("NoBattery_Sleep_UpdateBattery______________________________");
 
             return;
         }
@@ -132,12 +124,10 @@ public sealed partial class AndroidSystem : SharedAndroidSystem
 
         if (chargePercent == 0 && ent.Comp.hasCharge)
         {
-            //Log.Debug("Sleeeeeeep_____________________________");
             ChangeAndroidState(ent, false);
         }
         else if (chargePercent != 0 && !ent.Comp.hasCharge)
         {
-            //Log.Debug("WakeUp_____________________________");
             ChangeAndroidState(ent, true);
         }
 
@@ -151,14 +141,12 @@ public sealed partial class AndroidSystem : SharedAndroidSystem
         {
             Popup.PopupEntity(Loc.GetString("android-on"), ent);
             _statusEffects.TryRemoveStatusEffect(ent, StatusEffectKey);
-            //Log.Debug("WakeUp_ChangeState_____________________________");
         }
         else
         {
             var baseSleepDuration = _random.NextFloat(ent.Comp.minSleepTime, ent.Comp.maxSleepTime);
             Popup.PopupEntity(Loc.GetString("android-off"), ent);
             _statusEffects.TryAddStatusEffect<ForcedSleepingComponent>(ent, StatusEffectKey, TimeSpan.FromSeconds(baseSleepDuration), true);
-            //Log.Debug("Sleep_ChangeState_____________________________" + TimeSpan.FromSeconds(baseSleepDuration));
         }
 
         _powerCell.SetDrawEnabled(ent.Owner, activeStatus);

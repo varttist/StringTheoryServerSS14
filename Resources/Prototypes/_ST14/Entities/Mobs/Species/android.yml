@@ -8,7 +8,7 @@
   - type: Physics
     bodyType: KinematicController
   - type: Fixtures
-    fixtures: # TODO: This needs a second fixture just for mob collisions.
+    fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
@@ -42,7 +42,6 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 2
     baseSprintSpeed : 4
-  - type: TTS # Corvax-TTS
   - type: RequireProjectileTarget
     active: False
 # MobBloodstream
