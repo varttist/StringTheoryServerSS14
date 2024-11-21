@@ -1,0 +1,10 @@
+- type: emote
+  id: Sparking
+  name: "искрометание"
+  icon: 
+    sprite: Interface/Alerts/stamina.rsi
+    state: stamina5
+  whitelist:
+    components:
+    - Repairable
+  chatMessages: ["искрит"]

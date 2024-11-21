@@ -210,6 +210,10 @@
         conditions:
         - !type:OrganType
           type: Slime
+      - !type:Oxygenate
+        conditions:
+        - !type:OrganType
+          type: Android
       # Converts Nitrogen into CO2
       - !type:ModifyLungGas
         conditions:
@@ -225,6 +229,13 @@
         ratios:
           NitrousOxide: 1.0
           Nitrogen: -1.0
+      - !type:ModifyLungGas
+        conditions:
+        - !type:OrganType
+          type: Android
+        ratios:
+          NitrousOxide: 4.0
+          Nitrogen: -2.0
 
 - type: reagent
   id: NitrousOxide
@@ -246,6 +257,9 @@
         - !type:OrganType
           type: Slime
           shouldHave: false
+        - !type:OrganType
+          type: Android
+          shouldHave: false
         emote: Laugh
         showInChat: true
         probability: 0.1
@@ -257,6 +271,9 @@
         - !type:OrganType
           type: Slime
           shouldHave: false
+        - !type:OrganType
+          type: Android
+          shouldHave: false
         emote: Scream
         showInChat: true
         probability: 0.01
@@ -267,6 +284,9 @@
           min: 0.5
         - !type:OrganType
           type: Slime
+          shouldHave: false
+        - !type:OrganType
+          type: Android
           shouldHave: false
         type: Local
         visualType: Medium
@@ -280,6 +300,9 @@
         - !type:OrganType
           type: Slime
           shouldHave: false
+        - !type:OrganType
+          type: Android
+          shouldHave: false
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
       - !type:GenericStatusEffect
@@ -289,6 +312,9 @@
           min: 1.8
         - !type:OrganType
           type: Slime
+          shouldHave: false
+        - !type:OrganType
+          type: Android
           shouldHave: false
         key: ForcedSleep
         component: ForcedSleeping
@@ -301,6 +327,9 @@
           min: 3.5
         - !type:OrganType
           type: Slime
+          shouldHave: false
+        - !type:OrganType
+          type: Android
           shouldHave: false
         ignoreResistances: true
         damage:

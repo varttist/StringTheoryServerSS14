@@ -1,0 +1,101 @@
+- type: entity
+  name: экстернный биогазовый стимулятор
+  description: Быстрый ввод необходимых для андроидам газов поможет биокомпонентам работать дольше.
+  parent: BaseHealingItem
+  id: EmergencyBiogasStimulator
+  components:
+  - type: Sprite
+    sprite: _ST14/Objects/Specific/Medical/medical.rsi
+    state: emergency_android_stimulator
+  - type: Healing
+    damageContainers:
+      - BioRobotic
+    damage:
+      types:
+        Asphyxiation: -30
+    healingBeginSound:
+      path: "/Audio/Items/hypospray.ogg"
+    healingEndSound:
+      path: "/Audio/Items/hypospray.ogg"
+  - type: StackPrice
+    price: 300
+
+
+- type: entity
+  name: биотрубка
+  description: Заменяет андроидам вены.
+  parent: BaseHealingItem
+  id: BioTube
+  suffix: Full
+  components:
+  - type: Tag
+    tags:
+    - Gauze
+  - type: Sprite
+    sprite: _ST14/Objects/Specific/Medical/medical.rsi
+    state: bio_tube
+  - type: Healing
+    damageContainers:
+      - BioRobotic
+    damage:
+      types:
+        Slash: -2.5
+        Piercing: -2.5
+    bloodlossModifier: -10
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+  - type: Stack
+    stackType: BioTube
+    count: 10
+  - type: StackPrice
+    price: 100
+
+- type: entity
+  id: BioTube1
+  parent: BioTube
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+
+- type: entity
+  name: пакет тириума
+  description: Поможет восстановить потерянную био-жидкость.
+  parent: BaseHealingItem
+  id: TiriumPack
+  suffix: Full
+  components:
+  - type: Tag
+    tags:
+    - Bloodpack
+  - type: Sprite
+    sprite: _ST14/Objects/Specific/Medical/medical.rsi
+    state: tirium_pack
+  - type: Healing
+    damageContainers:
+      - BioRobotic
+    damage:
+      types:
+        Bloodloss: -0.6
+    ModifyBloodLevel: 15 
+    healingBeginSound:
+      path: "/Audio/Items/Medical/brutepack_begin.ogg"
+    healingEndSound:
+      path: "/Audio/Items/Medical/brutepack_end.ogg"
+  - type: Stack
+    stackType: TiriumPack
+    count: 10
+  - type: StackPrice
+    price: 100
+
+- type: entity
+  id: TiriumPack1
+  parent: TiriumPack
+  suffix: Single
+  components:
+  - type: Stack
+    stackType: BioTube
+    count: 1    
