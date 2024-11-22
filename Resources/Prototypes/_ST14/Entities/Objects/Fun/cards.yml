@@ -1,0 +1,1184 @@
+# Deck
+- type: entity
+  parent: BaseStorageItem
+  id: ST14Deck52
+  name: deck
+  description: Cardboard box for playing cards. Contains 52 cards.
+  components:
+  - type: Sprite
+    sprite: _ST14/Objects/Fun/cards.rsi
+    state: deck
+    scale: "0.66, 0.66"
+  - type: Storage
+    grid:
+    - 0,0,8,5
+    maxItemSize: Tiny
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      tags:
+        - ST14Card
+  - type: Dumpable
+    delayPerItem: 0.001
+    soundDump: /Audio/_ST14/cards_shuffle.ogg
+
+# Filled
+- type: entity
+  id: ST14Deck52Filled
+  parent: ST14Deck52
+  suffix: Filled
+  components:
+    - type: StorageFill
+      contents:
+      # Aces
+        - id: ST14CardAceDiamondsBackside
+        - id: ST14CardAceHeartsBackside
+        - id: ST14CardAceSpadesBackside
+        - id: ST14CardAceTrefsBackside
+      # Kings
+        - id: ST14CardKingDiamondsBackside
+        - id: ST14CardKingHeartsBackside
+        - id: ST14CardKingSpadesBackside
+        - id: ST14CardKingTrefsBackside
+      # Queens
+        - id: ST14CardQueenDiamondsBackside
+        - id: ST14CardQueenHeartsBackside
+        - id: ST14CardQueenSpadesBackside
+        - id: ST14CardQueenTrefsBackside
+      # Jacks
+        - id: ST14CardJackDiamondsBackside
+        - id: ST14CardJackHeartsBackside
+        - id: ST14CardJackSpadesBackside
+        - id: ST14CardJackTrefsBackside
+      # 10
+        - id: ST14Card10DiamondsBackside
+        - id: ST14Card10HeartsBackside
+        - id: ST14Card10SpadesBackside
+        - id: ST14Card10TrefsBackside
+      # 9
+        - id: ST14Card9DiamondsBackside
+        - id: ST14Card9HeartsBackside
+        - id: ST14Card9SpadesBackside
+        - id: ST14Card9TrefsBackside
+      # 8
+        - id: ST14Card8DiamondsBackside
+        - id: ST14Card8HeartsBackside
+        - id: ST14Card8SpadesBackside
+        - id: ST14Card8TrefsBackside
+      # 7
+        - id: ST14Card7DiamondsBackside
+        - id: ST14Card7HeartsBackside
+        - id: ST14Card7SpadesBackside
+        - id: ST14Card7TrefsBackside
+      # 6
+        - id: ST14Card6DiamondsBackside
+        - id: ST14Card6HeartsBackside
+        - id: ST14Card6SpadesBackside
+        - id: ST14Card6TrefsBackside
+      # 5
+        - id: ST14Card5DiamondsBackside
+        - id: ST14Card5HeartsBackside
+        - id: ST14Card5SpadesBackside
+        - id: ST14Card5TrefsBackside
+      # 4
+        - id: ST14Card4DiamondsBackside
+        - id: ST14Card4HeartsBackside
+        - id: ST14Card4SpadesBackside
+        - id: ST14Card4TrefsBackside
+      # 3
+        - id: ST14Card3DiamondsBackside
+        - id: ST14Card3HeartsBackside
+        - id: ST14Card3SpadesBackside
+        - id: ST14Card3TrefsBackside
+      # 2
+        - id: ST14Card2DiamondsBackside
+        - id: ST14Card2HeartsBackside
+        - id: ST14Card2SpadesBackside
+        - id: ST14Card2TrefsBackside
+
+
+# Base card
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: ST14Card
+  name: card
+  description: Laminated paper card with neat design.
+  components:
+  - type: Sprite
+    sprite: _ST14/Objects/Fun/cards.rsi
+    scale: "0.66, 0.66"
+  - type: Item
+    size: Tiny
+  - type: SpawnItemsOnUse
+    sound:
+      path: /Audio/_ST14/card.ogg
+  - type: Tag
+    tags:
+    - ST14Card
+
+- type: Tag
+  id: ST14Card
+
+# Backside card base
+- type: entity
+  parent: ST14Card
+  abstract: true
+  id: ST14CardBackside
+  components:
+  - type: Sprite
+    sprite: _ST14/Objects/Fun/cards.rsi
+    state: backside
+
+### Aces
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14CardAceDiamonds
+  name: ace diamonds
+  components:
+  - type: Sprite
+    state: ace_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardAceDiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardAceDiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardAceDiamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14CardAceHearts
+  name: ace hearts
+  components:
+  - type: Sprite
+    state: ace_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardAceHeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardAceHeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardAceHearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14CardAceSpades
+  name: ace spades
+  components:
+  - type: Sprite
+    state: ace_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardAceSpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardAceSpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardAceSpades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14CardAceTrefs
+  name: ace trefs
+  components:
+  - type: Sprite
+    state: ace_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardAceTrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardAceTrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardAceTrefs
+
+### Kings
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14CardKingDiamonds
+  name: king diamonds
+  components:
+  - type: Sprite
+    state: king_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardKingDiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardKingDiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardKingDiamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14CardKingHearts
+  name: king hearts
+  components:
+  - type: Sprite
+    state: king_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardKingHeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardKingHeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardKingHearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14CardKingSpades
+  name: king spades
+  components:
+  - type: Sprite
+    state: king_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardKingSpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardKingSpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardKingSpades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14CardKingTrefs
+  name: king trefs
+  components:
+  - type: Sprite
+    state: king_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardKingTrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardKingTrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardKingTrefs
+
+### Queens
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14CardQueenDiamonds
+  name: queen diamonds
+  components:
+  - type: Sprite
+    state: queen_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardQueenDiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardQueenDiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardQueenDiamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14CardQueenHearts
+  name: queen hearts
+  components:
+  - type: Sprite
+    state: queen_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardQueenHeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardQueenHeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardQueenHearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14CardQueenSpades
+  name: queen spades
+  components:
+  - type: Sprite
+    state: queen_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardQueenSpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardQueenSpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardQueenSpades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14CardQueenTrefs
+  name: queen trefs
+  components:
+  - type: Sprite
+    state: queen_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardQueenTrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardQueenTrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardQueenTrefs
+
+### Jacks
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14CardJackDiamonds
+  name: jack diamonds
+  components:
+  - type: Sprite
+    state: jack_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardJackDiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardJackDiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardJackDiamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14CardJackHearts
+  name: jack hearts
+  components:
+  - type: Sprite
+    state: jack_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardJackHeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardJackHeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardJackHearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14CardJackSpades
+  name: jack spades
+  components:
+  - type: Sprite
+    state: jack_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardJackSpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardJackSpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardJackSpades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14CardJackTrefs
+  name: jack trefs
+  components:
+  - type: Sprite
+    state: jack_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardJackTrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14CardJackTrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14CardJackTrefs
+
+### 10
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14Card10Diamonds
+  name: 10 diamonds
+  components:
+  - type: Sprite
+    state: 10_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card10DiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card10DiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card10Diamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14Card10Hearts
+  name: 10 hearts
+  components:
+  - type: Sprite
+    state: 10_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card10HeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card10HeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card10Hearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14Card10Spades
+  name: 10 spades
+  components:
+  - type: Sprite
+    state: 10_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card10SpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card10SpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card10Spades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14Card10Trefs
+  name: 10 trefs
+  components:
+  - type: Sprite
+    state: 10_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card10TrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card10TrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card10Trefs
+
+### 9
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14Card9Diamonds
+  name: 9 diamonds
+  components:
+  - type: Sprite
+    state: 9_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card9DiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card9DiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card9Diamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14Card9Hearts
+  name: 9 hearts
+  components:
+  - type: Sprite
+    state: 9_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card9HeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card9HeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card9Hearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14Card9Spades
+  name: 9 spades
+  components:
+  - type: Sprite
+    state: 9_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card9SpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card9SpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card9Spades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14Card9Trefs
+  name: 9 trefs
+  components:
+  - type: Sprite
+    state: 9_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card9TrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card9TrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card9Trefs
+
+### 8
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14Card8Diamonds
+  name: 8 diamonds
+  components:
+  - type: Sprite
+    state: 8_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card8DiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card8DiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card8Diamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14Card8Hearts
+  name: 8 hearts
+  components:
+  - type: Sprite
+    state: 8_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card8HeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card8HeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card8Hearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14Card8Spades
+  name: 8 spades
+  components:
+  - type: Sprite
+    state: 8_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card8SpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card8SpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card8Spades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14Card8Trefs
+  name: 8 trefs
+  components:
+  - type: Sprite
+    state: 8_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card8TrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card8TrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card8Trefs
+
+### 7
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14Card7Diamonds
+  name: 7 diamonds
+  components:
+  - type: Sprite
+    state: 7_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card7DiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card7DiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card7Diamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14Card7Hearts
+  name: 7 hearts
+  components:
+  - type: Sprite
+    state: 7_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card7HeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card7HeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card7Hearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14Card7Spades
+  name: 7 spades
+  components:
+  - type: Sprite
+    state: 7_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card7SpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card7SpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card7Spades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14Card7Trefs
+  name: 7 trefs
+  components:
+  - type: Sprite
+    state: 7_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card7TrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card7TrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card7Trefs
+
+### 6
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14Card6Diamonds
+  name: 6 diamonds
+  components:
+  - type: Sprite
+    state: 6_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card6DiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card6DiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card6Diamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14Card6Hearts
+  name: 6 hearts
+  components:
+  - type: Sprite
+    state: 6_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card6HeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card6HeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card6Hearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14Card6Spades
+  name: 6 spades
+  components:
+  - type: Sprite
+    state: 6_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card6SpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card6SpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card6Spades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14Card6Trefs
+  name: 6 trefs
+  components:
+  - type: Sprite
+    state: 6_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card6TrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card6TrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card6Trefs
+
+### 5
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14Card5Diamonds
+  name: 5 diamonds
+  components:
+  - type: Sprite
+    state: 5_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card5DiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card5DiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card5Diamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14Card5Hearts
+  name: 5 hearts
+  components:
+  - type: Sprite
+    state: 5_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card5HeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card5HeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card5Hearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14Card5Spades
+  name: 5 spades
+  components:
+  - type: Sprite
+    state: 5_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card5SpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card5SpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card5Spades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14Card5Trefs
+  name: 5 trefs
+  components:
+  - type: Sprite
+    state: 5_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card5TrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card5TrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card5Trefs
+
+### 4
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14Card4Diamonds
+  name: 4 diamonds
+  components:
+  - type: Sprite
+    state: 4_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card4DiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card4DiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card4Diamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14Card4Hearts
+  name: 4 hearts
+  components:
+  - type: Sprite
+    state: 4_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card4HeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card4HeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card4Hearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14Card4Spades
+  name: 4 spades
+  components:
+  - type: Sprite
+    state: 4_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card4SpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card4SpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card4Spades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14Card4Trefs
+  name: 4 trefs
+  components:
+  - type: Sprite
+    state: 4_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card4TrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card4TrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card4Trefs
+
+### 3
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14Card3Diamonds
+  name: 3 diamonds
+  components:
+  - type: Sprite
+    state: 3_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card3DiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card3DiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card3Diamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14Card3Hearts
+  name: 3 hearts
+  components:
+  - type: Sprite
+    state: 3_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card3HeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card3HeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card3Hearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14Card3Spades
+  name: 3 spades
+  components:
+  - type: Sprite
+    state: 3_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card3SpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card3SpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card3Spades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14Card3Trefs
+  name: 3 trefs
+  components:
+  - type: Sprite
+    state: 3_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card3TrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card3TrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card3Trefs
+
+### 2
+# Diamonds
+- type: entity
+  parent: ST14Card
+  id: ST14Card2Diamonds
+  name: 2 diamonds
+  components:
+  - type: Sprite
+    state: 2_diamonds
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card2DiamondsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card2DiamondsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card2Diamonds
+
+# Hearts
+- type: entity
+  parent: ST14Card
+  id: ST14Card2Hearts
+  name: 2 hearts
+  components:
+  - type: Sprite
+    state: 2_hearts
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card2HeartsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card2HeartsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card2Hearts
+
+# Spades
+- type: entity
+  parent: ST14Card
+  id: ST14Card2Spades
+  name: 2 spades
+  components:
+  - type: Sprite
+    state: 2_spades
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card2SpadesBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card2SpadesBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card2Spades
+
+# Trefs
+- type: entity
+  parent: ST14Card
+  id: ST14Card2Trefs
+  name: 2 trefs
+  components:
+  - type: Sprite
+    state: 2_trefs
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card2TrefsBackside
+
+- type: entity
+  parent: ST14CardBackside
+  id: ST14Card2TrefsBackside
+  components:
+  - type: SpawnItemsOnUse
+    items:
+      - id: ST14Card2Trefs
