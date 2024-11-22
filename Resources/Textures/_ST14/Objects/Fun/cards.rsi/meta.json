@@ -1,0 +1,186 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Cards by imera_ (discord)",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "deck"
+      },
+      {
+        "name": "backside"
+      },
+
+      {
+        "name": "ace_diamonds"
+      },
+      {
+        "name": "ace_hearts"
+      },
+      {
+        "name": "ace_spades"
+      },
+      {
+        "name": "ace_trefs"
+      },
+
+      {
+        "name": "king_diamonds"
+      },
+      {
+        "name": "king_hearts"
+      },
+      {
+        "name": "king_spades"
+      },
+      {
+        "name": "king_trefs"
+      },
+
+      {
+        "name": "queen_diamonds"
+      },
+      {
+        "name": "queen_hearts"
+      },
+      {
+        "name": "queen_spades"
+      },
+      {
+        "name": "queen_trefs"
+      },
+
+      {
+        "name": "jack_diamonds"
+      },
+      {
+        "name": "jack_hearts"
+      },
+      {
+        "name": "jack_spades"
+      },
+      {
+        "name": "jack_trefs"
+      },
+
+      {
+        "name": "10_diamonds"
+      },
+      {
+        "name": "10_hearts"
+      },
+      {
+        "name": "10_spades"
+      },
+      {
+        "name": "10_trefs"
+      },
+
+      {
+        "name": "9_diamonds"
+      },
+      {
+        "name": "9_hearts"
+      },
+      {
+        "name": "9_spades"
+      },
+      {
+        "name": "9_trefs"
+      },
+
+      {
+        "name": "8_diamonds"
+      },
+      {
+        "name": "8_hearts"
+      },
+      {
+        "name": "8_spades"
+      },
+      {
+        "name": "8_trefs"
+      },
+
+      {
+        "name": "7_diamonds"
+      },
+      {
+        "name": "7_hearts"
+      },
+      {
+        "name": "7_spades"
+      },
+      {
+        "name": "7_trefs"
+      },
+
+      {
+        "name": "6_diamonds"
+      },
+      {
+        "name": "6_hearts"
+      },
+      {
+        "name": "6_spades"
+      },
+      {
+        "name": "6_trefs"
+      },
+
+      {
+        "name": "5_diamonds"
+      },
+      {
+        "name": "5_hearts"
+      },
+      {
+        "name": "5_spades"
+      },
+      {
+        "name": "5_trefs"
+      },
+
+      {
+        "name": "4_diamonds"
+      },
+      {
+        "name": "4_hearts"
+      },
+      {
+        "name": "4_spades"
+      },
+      {
+        "name": "4_trefs"
+      },
+
+      {
+        "name": "3_diamonds"
+      },
+      {
+        "name": "3_hearts"
+      },
+      {
+        "name": "3_spades"
+      },
+      {
+        "name": "3_trefs"
+      },
+
+      {
+        "name": "2_diamonds"
+      },
+      {
+        "name": "2_hearts"
+      },
+      {
+        "name": "2_spades"
+      },
+      {
+        "name": "2_trefs"
+      }
+    ]
+  }
