@@ -41,6 +41,14 @@
     back:
     - PlushieSpaceLizard
 
+# ST14 add [begin]
+- type: loadout
+  id: ST14Deck52Filled
+  storage:
+    back:
+    - ST14Deck52Filled
+# ST14 add [end]
+
 # Smokeables
 - type: loadout
   id: Lighter
