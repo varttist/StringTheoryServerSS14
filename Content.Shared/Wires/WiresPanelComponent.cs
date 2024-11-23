@@ -55,6 +55,9 @@ public sealed partial class WiresPanelComponent : Component
     /// <returns></returns>
     [DataField]
     public LocId? ExamineTextOpen = "wires-panel-component-on-examine-open";
+
+    [DataField]
+    public bool AllowSelfOpen = true;   //ST14
 }
 
 /// <summary>

@@ -432,7 +432,7 @@
     damageProtection:
       flatReductions:
         Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
-  - type: WiresPanel
+  - type: UnblockableSpeech
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot { }
@@ -446,8 +446,11 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellSmall
-  - type: UnblockableSpeech
+        allowSelfEject: false #ST14
+        allowSelfInsert: false #ST14
   - type: Android #ST14 Component
+  - type: WiresPanel
+    allowSelfOpen: false #ST14
 
 - type: entity
   id: MobAndroidDummy
