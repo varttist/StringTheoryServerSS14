@@ -17,9 +17,9 @@
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Chest: MobAndroidTorso
-    Tail: MobHumanoidAnyMarking # Corvax-Sponsors
+    Tail: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
-    HeadTop: MobHumanoidAnyMarking #Corvax-Sponsors
+    HeadTop: MobHumanoidAnyMarking
     LArm: MobAndroidLArm
     RArm: MobAndroidRArm
     LHand: MobAndroidLHand
@@ -32,8 +32,8 @@
 - type: markingPoints
   id: MobAndroidMarkingLimits
   points:
-    Special: # the cat ear joke
-      points: 1 # Corvax-Sponsors
+    Special:
+      points: 1
       required: false
     Hair:
       points: 1
@@ -44,8 +44,8 @@
     Snout:
       points: 1
       required: false
-    Tail: # the cat tail joke
-      points: 1 # Corvax-Sponsors
+    Tail:
+      points: 1
       required: false
     HeadTop:
       points: 1
@@ -54,10 +54,10 @@
       points: 1
       required: false
     Legs:
-      points: 2
+      points: 6
       required: false
     Arms:
-      points: 2
+      points: 6
       required: false
 
 - type: humanoidBaseSprite
