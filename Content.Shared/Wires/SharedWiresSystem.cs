@@ -54,6 +54,9 @@ public abstract class SharedWiresSystem : EntitySystem
         if (!Tool.HasQuality(args.Used, ent.Comp.OpeningTool))
             return;
 
+        if (args.User == args.Target && !ent.Comp.AllowSelfOpen) //ST14
+            return;
+
         if (!CanTogglePanel(ent, args.User))
             return;
 

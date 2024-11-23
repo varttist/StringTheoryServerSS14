@@ -527,6 +527,9 @@ namespace Content.Shared.Containers.ItemSlots
             if (slot.ContainerSlot?.ContainedEntity is not { } item)
                 return false;
 
+            if (uid == user && !slot.AllowSelfEject) //ST14
+                return false;
+
             var ev = new ItemSlotEjectAttemptEvent(uid, item, user, slot);
             RaiseLocalEvent(uid, ref ev);
             RaiseLocalEvent(item, ref ev);

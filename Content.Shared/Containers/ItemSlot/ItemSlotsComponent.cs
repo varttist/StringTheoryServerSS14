@@ -242,6 +242,12 @@ namespace Content.Shared.Containers.ItemSlots
         [NonSerialized]
         public bool Local = true;
 
+        [DataField]
+        public bool AllowSelfEject = true; //ST14
+
+        [DataField]
+        public bool AllowSelfInsert = true; //ST14
+
         public void CopyFrom(ItemSlot other)
         {
             // These fields are mutable reference types. But they generally don't get modified, so this should be fine.

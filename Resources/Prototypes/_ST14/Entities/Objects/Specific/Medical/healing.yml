@@ -1,5 +1,5 @@
 - type: entity
-  name: экстернный биогазовый стимулятор
+  name: экстренный биогазовый стимулятор
   description: Быстрый ввод необходимых для андроидам газов поможет биокомпонентам работать дольше.
   parent: BaseHealingItem
   id: EmergencyBiogasStimulator
