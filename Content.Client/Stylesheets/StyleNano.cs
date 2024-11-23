@@ -14,7 +14,6 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
-using Robust.Shared.Graphics;
 using static Robust.Client.UserInterface.StylesheetHelpers;
 
 namespace Content.Client.Stylesheets
@@ -96,20 +95,20 @@ namespace Content.Client.Stylesheets
         public static readonly Color DangerousRedFore = Color.FromHex("#BB3232");
         public static readonly Color DisabledFore = Color.FromHex("#5A5A5A");
 
-        public static readonly Color ButtonColorDefault = Color.FromHex("#2e6d85").WithAlpha(0.6f); //ST14 Changed
-        public static readonly Color ButtonColorDefaultRed = Color.FromHex("#D43B3B").WithAlpha(0.6f); //ST14 Changed
-        public static readonly Color ButtonColorHovered = Color.FromHex("#81c7e2").WithAlpha(0.6f); //ST14 Changed
-        public static readonly Color ButtonColorHoveredRed = Color.FromHex("#DF6B6B").WithAlpha(0.6f); //ST14 Changed
-        public static readonly Color ButtonColorPressed = Color.FromHex("#87e7d4").WithAlpha(0.6f); //ST14 Changed
-        public static readonly Color ButtonColorDisabled = Color.FromHex("#0c3a4c").WithAlpha(0.6f); //ST14 Changed
+        public static readonly Color ButtonColorDefault = Color.FromHex("#2e6d85"); //ST14 Changed
+        public static readonly Color ButtonColorDefaultRed = Color.FromHex("#D43B3B");
+        public static readonly Color ButtonColorHovered = Color.FromHex("#81c7e2"); //ST14 Changed
+        public static readonly Color ButtonColorHoveredRed = Color.FromHex("#DF6B6B");
+        public static readonly Color ButtonColorPressed = Color.FromHex("#87e7d4"); //ST14 Changed
+        public static readonly Color ButtonColorDisabled = Color.FromHex("#0c3a4c"); //ST14 Changed
 
-        public static readonly Color ButtonColorCautionDefault = Color.FromHex("#ab3232").WithAlpha(0.6f); //ST14 Changed
-        public static readonly Color ButtonColorCautionHovered = Color.FromHex("#cf2f2f").WithAlpha(0.6f); //ST14 Changed
-        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#3e6c45").WithAlpha(0.6f); //ST14 Changed
-        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#602a2a").WithAlpha(0.6f); //ST14 Changed
+        public static readonly Color ButtonColorCautionDefault = Color.FromHex("#ab3232");
+        public static readonly Color ButtonColorCautionHovered = Color.FromHex("#cf2f2f");
+        public static readonly Color ButtonColorCautionPressed = Color.FromHex("#3e6c45");
+        public static readonly Color ButtonColorCautionDisabled = Color.FromHex("#602a2a");
 
-        public static readonly Color ButtonColorGoodDefault = Color.FromHex("#348263").WithAlpha(0.6f); //ST14 Changed
-        public static readonly Color ButtonColorGoodHovered = Color.FromHex("#418268").WithAlpha(0.6f); //ST14 Changed
+        public static readonly Color ButtonColorGoodDefault = Color.FromHex("#348263"); //ST14 Changed
+        public static readonly Color ButtonColorGoodHovered = Color.FromHex("#418268"); //ST14 Changed
 
         //NavMap
         public static readonly Color PointRed = Color.FromHex("#B02E26");
@@ -131,7 +130,7 @@ namespace Content.Client.Stylesheets
         // Fancy Tree elements
         public static readonly Color FancyTreeEvenRowColor = Color.FromHex("#090812"); //ST14 Changed
         public static readonly Color FancyTreeOddRowColor = FancyTreeEvenRowColor * new Color(0.8f, 0.8f, 0.8f);
-        public static readonly Color FancyTreeSelectedRowColor = PanelDark.WithAlpha(0.8f); //ST14 Changed
+        public static readonly Color FancyTreeSelectedRowColor = PanelDark; //ST14 Changed
 
         //Used by the APC and SMES menus
         public const string StyleClassPowerStateNone = "PowerStateNone";
@@ -434,13 +433,13 @@ namespace Content.Client.Stylesheets
             placeholder.SetExpandMargin(StyleBox.Margin.All, -5);
             placeholder.Mode = StyleBoxTexture.StretchMode.Tile;
 
-            var itemListBackgroundSelected = new StyleBoxFlat { BackgroundColor = ST14_LightDarkBlue.WithAlpha(0.7f) }; //ST14 Changed
+            var itemListBackgroundSelected = new StyleBoxFlat { BackgroundColor = ST14_LightDarkBlue }; //ST14 Changed
             itemListBackgroundSelected.SetContentMarginOverride(StyleBox.Margin.Vertical, 2);
             itemListBackgroundSelected.SetContentMarginOverride(StyleBox.Margin.Horizontal, 4);
             var itemListItemBackgroundDisabled = new StyleBoxFlat { BackgroundColor = new Color(10, 10, 12) };
             itemListItemBackgroundDisabled.SetContentMarginOverride(StyleBox.Margin.Vertical, 2);
             itemListItemBackgroundDisabled.SetContentMarginOverride(StyleBox.Margin.Horizontal, 4);
-            var itemListItemBackground = new StyleBoxFlat { BackgroundColor = ST14_DarkBlue.WithAlpha(0.7f) }; //ST14 Changed
+            var itemListItemBackground = new StyleBoxFlat { BackgroundColor = ST14_DarkBlue }; //ST14 Changed
             itemListItemBackground.SetContentMarginOverride(StyleBox.Margin.Vertical, 2);
             itemListItemBackground.SetContentMarginOverride(StyleBox.Margin.Horizontal, 4);
             var itemListItemBackgroundTransparent = new StyleBoxFlat { BackgroundColor = Color.Transparent };
@@ -828,15 +827,15 @@ namespace Content.Client.Stylesheets
 
                 Element<ContainerButton>().Class(ListContainer.StyleClassListContainerButton)
                     .Pseudo(ContainerButton.StylePseudoClassNormal)
-                    .Prop(Control.StylePropertyModulateSelf, PanelDark.WithAlpha(0.8f)), //ST14 Changed
+                    .Prop(Control.StylePropertyModulateSelf, PanelDark), //ST14 Changed
 
                 Element<ContainerButton>().Class(ListContainer.StyleClassListContainerButton)
                     .Pseudo(ContainerButton.StylePseudoClassHover)
-                    .Prop(Control.StylePropertyModulateSelf, ST14_DarkBlue.WithAlpha(0.7f)), //ST14 Changed
+                    .Prop(Control.StylePropertyModulateSelf, ST14_DarkBlue), //ST14 Changed
 
                 Element<ContainerButton>().Class(ListContainer.StyleClassListContainerButton)
                     .Pseudo(ContainerButton.StylePseudoClassPressed)
-                    .Prop(Control.StylePropertyModulateSelf, ST14_DarkBlue.WithAlpha(0.7f)), //ST14 Changed
+                    .Prop(Control.StylePropertyModulateSelf, ST14_DarkBlue), //ST14 Changed
 
                 Element<ContainerButton>().Class(ListContainer.StyleClassListContainerButton)
                     .Pseudo(ContainerButton.StylePseudoClassDisabled)
@@ -1041,7 +1040,7 @@ namespace Content.Client.Stylesheets
                 new StyleRule(new SelectorElement(typeof(ItemList), null, null, null), new[]
                 {
                     new StyleProperty(ItemList.StylePropertyBackground,
-                        new StyleBoxFlat {BackgroundColor = PanelDark.WithAlpha(0.7f)}), //ST14 Changed
+                        new StyleBoxFlat {BackgroundColor = PanelDark}), //ST14 Changed
                     new StyleProperty(ItemList.StylePropertyItemBackground,
                         itemListItemBackground),
                     new StyleProperty(ItemList.StylePropertyDisabledItemBackground,
@@ -1081,7 +1080,7 @@ namespace Content.Client.Stylesheets
                         new StyleBoxFlat {BackgroundColor = new Color(32, 32, 40)}),
                     new StyleProperty(Tree.StylePropertyItemBoxSelected, new StyleBoxFlat
                     {
-                        BackgroundColor = PanelDark.WithAlpha(0.8f), //ST14 Changed
+                        BackgroundColor = PanelDark, //ST14 Changed
                         ContentMarginLeftOverride = 4
                     })
                 }),
