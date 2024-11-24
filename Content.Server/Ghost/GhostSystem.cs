@@ -91,6 +91,7 @@ namespace Content.Server.Ghost
             SubscribeLocalEvent<GhostComponent, BooActionEvent>(OnActionPerform);
             SubscribeLocalEvent<GhostComponent, ToggleGhostHearingActionEvent>(OnGhostHearingAction);
             SubscribeLocalEvent<GhostComponent, InsertIntoEntityStorageAttemptEvent>(OnEntityStorageInsertAttempt);
+            SubscribeLocalEvent<GhostComponent, RespawnActionEvent>(OnRespawnAction); //ST14
 
             SubscribeLocalEvent<RoundEndTextAppendEvent>(_ => MakeVisible(true));
             SubscribeLocalEvent<ToggleGhostVisibilityToAllEvent>(OnToggleGhostVisibilityToAll);
@@ -140,6 +141,24 @@ namespace Content.Server.Ghost
 
             args.Handled = true;
         }
+
+        //ST14 Code Start
+        private void OnRespawnAction(EntityUid uid, GhostComponent component, RespawnActionEvent args)
+        {
+            if (args.Handled)
+                return;
+
+            if (!_minds.TryGetMind(uid, out _, out var mind))
+                return;
+
+            if (mind.Session == null)
+                return;
+
+            _gameTicker.Respawn(mind.Session);
+
+            args.Handled = true;
+        }
+        //ST14 Code Finish
 
         private void OnRelayMoveInput(EntityUid uid, GhostOnMoveComponent component, ref MoveInputEvent args)
         {
@@ -218,6 +237,7 @@ namespace Content.Server.Ghost
             _actions.AddAction(uid, ref component.ToggleLightingActionEntity, component.ToggleLightingAction);
             _actions.AddAction(uid, ref component.ToggleFoVActionEntity, component.ToggleFoVAction);
             _actions.AddAction(uid, ref component.ToggleGhostsActionEntity, component.ToggleGhostsAction);
+            _actions.AddAction(uid, ref component.RespawnActionEntity, component.RespawnAction); //ST14
         }
 
         private void OnGhostExamine(EntityUid uid, GhostComponent component, ExaminedEvent args)

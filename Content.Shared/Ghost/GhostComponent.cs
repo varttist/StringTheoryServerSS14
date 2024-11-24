@@ -39,6 +39,18 @@ public sealed partial class GhostComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? BooActionEntity;
 
+
+    // ST14 Code Start
+
+    [DataField]
+    public EntProtoId RespawnAction = "ActionRespawn";
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? RespawnActionEntity;
+
+    // ST14 Code Finish
+
+
     // End actions
 
     [ViewVariables(VVAccess.ReadWrite), DataField]
@@ -104,3 +116,5 @@ public sealed partial class ToggleGhostHearingActionEvent : InstantActionEvent {
 public sealed partial class ToggleGhostVisibilityToAllEvent : InstantActionEvent { }
 
 public sealed partial class BooActionEvent : InstantActionEvent { }
+
+public sealed partial class RespawnActionEvent : InstantActionEvent { } //ST14

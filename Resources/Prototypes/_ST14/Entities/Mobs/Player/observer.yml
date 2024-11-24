@@ -1,0 +1,13 @@
+# proto for player ghosts specifically
+
+- type: entity
+  id: ActionRespawn
+  name: Respawn
+  description: Returns you back to the lobby.
+  components:
+  - type: InstantAction
+    icon: Interface/VerbIcons/refresh.svg.192dpi.png
+    checkCanInteract: false
+    event: !type:RespawnActionEvent
+    startDelay: true
+    useDelay: 600
