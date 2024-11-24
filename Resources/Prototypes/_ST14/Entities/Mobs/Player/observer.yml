@@ -3,7 +3,7 @@
 - type: entity
   id: ActionRespawn
   name: Respawn
-  description: Returns you back to the lobby.
+  description: Returns you back to the lobby. It is forbidden to enter a character who has already been in the game.
   components:
   - type: InstantAction
     icon: Interface/VerbIcons/refresh.svg.192dpi.png
