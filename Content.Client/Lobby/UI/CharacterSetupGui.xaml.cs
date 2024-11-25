@@ -38,10 +38,10 @@ namespace Content.Client.Lobby.UI
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
 
-            var panelTex = _resourceCache.GetTexture("/Textures/Interface/Nano/button.svg.96dpi.png");
+            var transparentPanelTex = _resourceCache.GetTexture("/Textures/_ST14/Interface/Nano/transparent_button.svg.96dpi.png"); //ST14 Changed
             var back = new StyleBoxTexture
             {
-                Texture = panelTex,
+                Texture = transparentPanelTex, ////ST14 Changed
                 Modulate = StyleNano.PanelDark //ST14 Changed
             };
             back.SetPatchMargin(StyleBox.Margin.All, 10);
