@@ -1,4 +1,6 @@
-- type: weightedRandom
-  id: TraitorObjectiveGroupNukieDisk
-  weights:
-    NukeDiskStealObjective: 0.05
+# ST14 remove [begin]
+#- type: weightedRandom
+#  id: TraitorObjectiveGroupNukieDisk
+#  weights:
+#    NukeDiskStealObjective: 0.05
+# ST14 remove [end]

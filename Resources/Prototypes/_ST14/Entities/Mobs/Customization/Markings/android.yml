@@ -1,0 +1,156 @@
+#LEDs
+- type: marking
+  id: AndroidRArmLED
+  bodyPart: RArm
+  markingCategory: Arms
+  speciesRestriction: [ Android ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: _ST14/Mobs/Customization/android.rsi
+      state: robotic_r_arm_led
+
+- type: marking
+  id: AndroidLArmLED
+  bodyPart: LArm
+  markingCategory: Arms
+  speciesRestriction: [ Android ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: _ST14/Mobs/Customization/android.rsi
+      state: robotic_l_arm_led
+
+- type: marking
+  id: AndroidRLegLED
+  bodyPart: RLeg
+  markingCategory: Legs
+  speciesRestriction: [ Android ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: _ST14/Mobs/Customization/android.rsi
+      state: robotic_r_leg_led
+
+- type: marking
+  id: AndroidLLegLED
+  bodyPart: LLeg
+  markingCategory: Legs
+  speciesRestriction: [ Android ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: _ST14/Mobs/Customization/android.rsi
+      state: robotic_l_leg_led
+
+- type: marking
+  id: AndroidChestLED
+  bodyPart: Chest
+  markingCategory: Chest
+  speciesRestriction: [ Android ]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+    - sprite: _ST14/Mobs/Customization/android.rsi
+      state: robotic_torso_led
+
+#Ears
+- type: marking
+  id: AndroidLongEars
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Android]
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: Mobs/Customization/ears.rsi
+    state: long_ears
+
+#Noses
+- type: marking
+  id: AndroidNoseSchnozz
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  speciesRestriction: [Android]
+  sprites:
+  - sprite: Mobs/Customization/human_noses.rsi
+    state: schnozz
+
+- type: marking
+  id: AndroidNoseNubby
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  speciesRestriction: [Android]
+  sprites:
+  - sprite: Mobs/Customization/human_noses.rsi
+    state: nubby
+
+- type: marking
+  id: AndroidNoseDroop
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  speciesRestriction: [Android]
+  sprites:
+  - sprite: Mobs/Customization/human_noses.rsi
+    state: droop
+
+- type: marking
+  id: AndroidNoseBlob
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  speciesRestriction: [Android]
+  sprites:
+  - sprite: Mobs/Customization/human_noses.rsi
+    state: blob
+
+- type: marking
+  id: AndroidNoseUppie
+  bodyPart: Snout
+  markingCategory: Snout
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  speciesRestriction: [Android]
+  sprites:
+  - sprite: Mobs/Customization/human_noses.rsi
+    state: uppie
