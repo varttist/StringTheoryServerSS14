@@ -380,7 +380,7 @@ namespace Content.Client.Stylesheets
             actionSearchBox.SetPatchMargin(StyleBox.Margin.All, 3);
             actionSearchBox.SetContentMarginOverride(StyleBox.Margin.Horizontal, 5);
 
-            var tabContainerPanelTex = resCache.GetTexture("/Textures/Interface/Nano/tabcontainer_panel.png");
+            var tabContainerPanelTex = resCache.GetTexture("/Textures/_ST14/Interface/Nano/transparent_tabcontainer_panel.png");
             var tabContainerPanel = new StyleBoxTexture
             {
                 Texture = tabContainerPanelTex,
@@ -903,7 +903,7 @@ namespace Content.Client.Stylesheets
                         new StyleProperty(LineEdit.StylePropertyStyleBox, actionSearchBox),
                     }),
 
-                // TabContainer
+                // TabContainer 
                 new StyleRule(new SelectorElement(typeof(TabContainer), null, null, null),
                     new[]
                     {
@@ -1395,6 +1395,12 @@ namespace Content.Client.Stylesheets
                 Element<PanelContainer>().Class("BackgroundOpenLeft")
                     .Prop(PanelContainer.StylePropertyPanel, BaseButtonOpenLeft)
                     .Prop(Control.StylePropertyModulateSelf, ST14_DarkBlue), //ST14 Changed
+
+                //ST14 Code Start
+                Element<PanelContainer>().Class(ClassTransparentAngleRect)
+                    .Prop(PanelContainer.StylePropertyPanel, BaseTransparentAngleRect)
+                    .Prop(Control.StylePropertyModulateSelf, ST14_DarkBlue.WithAlpha(0.8f)),
+                //ST14 Code Finish
                 // ---
 
                 // Dividers

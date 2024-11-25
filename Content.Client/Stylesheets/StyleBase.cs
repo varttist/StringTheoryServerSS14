@@ -19,6 +19,7 @@ namespace Content.Client.Stylesheets
         public const string StyleClassItalic = "Italic";
 
         public const string ClassAngleRect = "AngleRect";
+        public const string ClassTransparentAngleRect = "TransparentAngleRect";
 
         public const string ButtonOpenRight = "OpenRight";
         public const string ButtonOpenLeft = "OpenLeft";
@@ -40,6 +41,7 @@ namespace Content.Client.Stylesheets
         protected StyleBoxTexture BaseButtonSquare { get; }
 
         protected StyleBoxTexture BaseAngleRect { get; }
+        protected StyleBoxTexture BaseTransparentAngleRect { get; } //ST14
         protected StyleBoxTexture AngleBorderRect { get; }
 
         protected StyleBase(IResourceCache resCache)
@@ -68,6 +70,7 @@ namespace Content.Client.Stylesheets
 
             // Button styles.
             var buttonTex = resCache.GetTexture("/Textures/Interface/Nano/button.svg.96dpi.png");
+            var transparent_buttonTex = resCache.GetTexture("/Textures/_ST14/Interface/Nano/transparent_button.svg.96dpi.png"); //ST14
             BaseButton = new StyleBoxTexture
             {
                 Texture = buttonTex,
@@ -116,6 +119,14 @@ namespace Content.Client.Stylesheets
                 Texture = buttonTex,
             };
             BaseAngleRect.SetPatchMargin(StyleBox.Margin.All, 10);
+
+            //ST14 Code Start
+            BaseTransparentAngleRect = new StyleBoxTexture
+            {
+                Texture = transparent_buttonTex,
+            };
+            BaseTransparentAngleRect.SetPatchMargin(StyleBox.Margin.All, 10);
+            //ST14 Code Finish
 
             AngleBorderRect = new StyleBoxTexture
             {
