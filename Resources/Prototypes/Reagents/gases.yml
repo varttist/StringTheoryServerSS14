@@ -254,6 +254,7 @@
         - !type:ReagentThreshold
           reagent: NitrousOxide
           min: 0.2
+          max: 0.5
         - !type:OrganType
           type: Slime
           shouldHave: false
@@ -309,7 +310,7 @@
         conditions:
         - !type:ReagentThreshold
           reagent: NitrousOxide
-          min: 1.8
+          min: 1
         - !type:OrganType
           type: Slime
           shouldHave: false
@@ -318,7 +319,7 @@
           shouldHave: false
         key: ForcedSleep
         component: ForcedSleeping
-        time: 3
+        time: 300 # This reeks, but I guess it works LMAO
         type: Add
       - !type:HealthChange
         conditions:

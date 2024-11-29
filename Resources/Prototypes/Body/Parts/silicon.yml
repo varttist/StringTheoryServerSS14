@@ -18,14 +18,19 @@
     price: 5
   - type: Tag
     tags:
-      - Trash
+    - Trash
   - type: PhysicalComposition
     materialComposition:
       Steel: 25
   - type: GuideHelp
     guides:
     - Cyborgs
-    - Robotics
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/organ1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/organ2.ogg
+  - type: Gibbable
 
 - type: entity
   id: LeftArmBorg
@@ -33,7 +38,7 @@
   name: cyborg left arm
   components:
   - type: BodyPart
-    partType: Hand
+    partType: Arm
     symmetry: Left
   - type: Sprite
     state: borg_l_arm
@@ -51,7 +56,7 @@
   name: cyborg right arm
   components:
   - type: BodyPart
-    partType: Hand
+    partType: Arm
     symmetry: Right
   - type: Sprite
     state: borg_r_arm
