@@ -2,17 +2,19 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Storage;
+using Content.Shared.Random;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Inventory;
-
 public partial class InventorySystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IViewVariablesManager _vvm = default!;
-
+    [Dependency] private readonly RandomHelperSystem _randomHelper = default!; // CorvaxNext: surgery
+    [Dependency] private readonly ISerializationManager _serializationManager = default!; // CorvaxNext: surgery
     private void InitializeSlots()
     {
         SubscribeLocalEvent<InventoryComponent, ComponentInit>(OnInit);
@@ -60,7 +62,8 @@ public partial class InventorySystem : EntitySystem
         if (!_prototypeManager.TryIndex(component.TemplateId, out InventoryTemplatePrototype? invTemplate))
             return;
 
-        component.Slots = invTemplate.Slots;
+        _serializationManager.CopyTo(invTemplate.Slots, ref component.Slots, notNullableOverride: true);  // CorvaxNext: surgery
+
         component.Containers = new ContainerSlot[component.Slots.Length];
         for (var i = 0; i < component.Containers.Length; i++)
         {
@@ -139,7 +142,7 @@ public partial class InventorySystem : EntitySystem
 
         foreach (var slotDef in inventory.Slots)
         {
-            if (!slotDef.Name.Equals(slot))
+            if (!slotDef.Name.Equals(slot) || slotDef.Disabled) // CorvaxNext: surgery
                 continue;
             slotDefinition = slotDef;
             return true;
@@ -193,6 +196,37 @@ public partial class InventorySystem : EntitySystem
             yield return slotDef.Name;
         }
     }
+
+    // start-_CorvaxNext: surgery
+    public void SetSlotStatus(EntityUid uid, string slotName, bool isDisabled, InventoryComponent? inventory = null)
+    {
+        if (!Resolve(uid, ref inventory))
+            return;
+
+        foreach (var slot in inventory.Slots)
+        {
+            if (slot.Name != slotName)
+                continue;
+
+
+            if (!TryGetSlotContainer(uid, slotName, out var container, out _, inventory))
+                break;
+
+            if (isDisabled)
+            {
+                if (container.ContainedEntity is { } entityUid && TryComp(entityUid, out TransformComponent? transform) && _gameTiming.IsFirstTimePredicted)
+                {
+                    _transform.AttachToGridOrMap(entityUid, transform);
+                    _randomHelper.RandomOffset(entityUid, 0.5f);
+                }
+            }
+            //slot.Disabled = isDisabled; // CorvaxNext: TURNED OFF FEATURE, would be fixed today maybe with proper limbs cutting disables appropriate slot(-s)
+            break;
+        }
+
+        Dirty(uid, inventory);
+    }
+    // end-_CorvaxNext: surgery
 
     /// <summary>
     /// Change the inventory template ID an entity is using. The new template must be compatible.
@@ -252,7 +286,7 @@ public partial class InventorySystem : EntitySystem
                 var i = _nextIdx++;
                 var slot = _slots[i];
 
-                if ((slot.SlotFlags & _flags) == 0)
+                if ((slot.SlotFlags & _flags) == 0 || slot.Disabled) // CorvaxNext: surgery
                     continue;
 
                 container = _containers[i];
@@ -270,7 +304,7 @@ public partial class InventorySystem : EntitySystem
                 var i = _nextIdx++;
                 var slot = _slots[i];
 
-                if ((slot.SlotFlags & _flags) == 0)
+                if ((slot.SlotFlags & _flags) == 0 || slot.Disabled) // CorvaxNext: surgery
                     continue;
 
                 var container = _containers[i];
