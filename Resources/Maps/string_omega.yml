@@ -4964,9 +4964,9 @@ entities:
       parent: 4812
     - type: DeviceList
       devices:
-      - 7905
+      - 7767
       - 8065
-      - 8439
+      - 7905
   - uid: 12219
     components:
     - type: Transform
@@ -7484,14 +7484,13 @@ entities:
       deviceLists:
       - 13156
       - 13155
-  - uid: 8439
+  - uid: 7905
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: -35.5,11.5
       parent: 4812
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 12213
   - uid: 8805
@@ -27939,6 +27938,13 @@ entities:
     - type: Transform
       pos: 7.5679626,-16.149172
       parent: 4812
+- proto: CaptainDrobe
+  entities:
+  - uid: 7064
+    components:
+    - type: Transform
+      pos: -12.5,29.5
+      parent: 4812
 - proto: CaptainIDCard
   entities:
   - uid: 2588
@@ -38026,13 +38032,6 @@ entities:
     - type: Transform
       pos: -26.5,-40.5
       parent: 4812
-- proto: DresserCaptainFilled
-  entities:
-  - uid: 7064
-    components:
-    - type: Transform
-      pos: -12.5,29.5
-      parent: 4812
 - proto: DresserChiefEngineerFilled
   entities:
   - uid: 12479
@@ -41332,7 +41331,6 @@ entities:
     - type: GasMixer
       inletTwoConcentration: 0.78
       inletOneConcentration: 0.22
-      enabled: True
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 11908
@@ -54328,15 +54326,11 @@ entities:
     - type: Transform
       pos: -43.5,12.5
       parent: 4812
-    - type: GasPressurePump
-      enabled: True
   - uid: 9104
     components:
     - type: Transform
       pos: -45.5,12.5
       parent: 4812
-    - type: GasPressurePump
-      enabled: True
   - uid: 9105
     components:
     - type: Transform
@@ -54370,8 +54364,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -39.5,1.5
       parent: 4812
-    - type: GasPressurePump
-      enabled: True
     - type: AtmosPipeColor
       color: '#0055CCFF'
   - uid: 11906
@@ -54380,8 +54372,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -39.5,2.5
       parent: 4812
-    - type: GasPressurePump
-      enabled: True
     - type: AtmosPipeColor
       color: '#990000FF'
   - uid: 13377
@@ -55198,19 +55188,6 @@ entities:
       parent: 4812
     - type: AtmosPipeColor
       color: '#0055CCFF'
-  - uid: 7905
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -36.5,10.5
-      parent: 4812
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 12213
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
   - uid: 7910
     components:
     - type: Transform
@@ -55235,6 +55212,15 @@ entities:
       parent: 4812
     - type: AtmosPipeColor
       color: '#0055CCFF'
+  - uid: 8065
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -36.5,10.5
+      parent: 4812
+    - type: DeviceNetwork
+      deviceLists:
+      - 12213
   - uid: 8238
     components:
     - type: Transform
@@ -56020,6 +56006,15 @@ entities:
       parent: 4812
     - type: AtmosPipeColor
       color: '#990000FF'
+  - uid: 7767
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -36.5,11.5
+      parent: 4812
+    - type: DeviceNetwork
+      deviceLists:
+      - 12213
   - uid: 7858
     components:
     - type: Transform
@@ -56085,17 +56080,6 @@ entities:
       parent: 4812
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 8065
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -36.5,11.5
-      parent: 4812
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-      deviceLists:
-      - 12213
   - uid: 8239
     components:
     - type: Transform
@@ -75607,11 +75591,6 @@ entities:
     - type: Transform
       pos: -8.5,-28.5
       parent: 4812
-  - uid: 7767
-    components:
-    - type: Transform
-      pos: -36.5,10.5
-      parent: 4812
   - uid: 8400
     components:
     - type: Transform
@@ -75631,6 +75610,12 @@ entities:
     components:
     - type: Transform
       pos: -27.5,26.5
+      parent: 4812
+  - uid: 8439
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -36.5,10.5
       parent: 4812
   - uid: 9459
     components:
