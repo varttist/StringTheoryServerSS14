@@ -18,6 +18,10 @@
     state: brain
   - type: Input
     context: "ghost"
+# start-_CorvaxNext: surgery
+  - type: Organ
+    slotId: brain
+# end-_CorvaxNext: surgery
   - type: Brain
   - type: InputMover
   - type: Examiner
@@ -33,6 +37,11 @@
     layers:
       - state: eyeball-l
       - state: eyeball-r
+# start-_CorvaxNext: surgery
+  - type: Organ
+    slotId: eyes
+  - type: Eyes
+# end-_CorvaxNext: surgery
   - type: Gibbable
 
 - type: entity
@@ -66,6 +75,7 @@
   - type: Sprite
     state: ears
   - type: Gibbable
+  - type: Ears # _CorvaxNext: surgery
 
 - type: entity
   id: OrganAndroidLungs
@@ -78,6 +88,8 @@
       - state: lung-l
       - state: lung-r
   - type: Lung
+  - type: Organ # _CorvaxNext: surgery
+    slotId: lungs
   - type: Metabolizer
     removeEmpty: true
     solutionOnBody: false
@@ -94,6 +106,11 @@
   name: механическое сердце
   description: "Не думаю, что оно может страдать... Хотя..."
   components:
+# start-_CorvaxNext: surgery
+  - type: Heart
+  - type: Organ
+    slotId: heart
+# end-_CorvaxNext: surgery
   - type: Sprite
     state: heart-on
   - type: Metabolizer
@@ -116,6 +133,8 @@
       stomach:
         maxVol: 50
   - type: Stomach
+  - type: Organ # _CorvaxNext: surgery
+    slotId: stomach
   - type: Metabolizer
     maxReagents: 3
     metabolizerTypes: [Human]
@@ -132,6 +151,11 @@
   components:
   - type: Sprite
     state: liver
+# start-_CorvaxNext: surgery
+  - type: Liver
+  - type: Organ
+    slotId: liver
+# end-_CorvaxNext: surgery
   - type: Gibbable
 
 - type: entity
