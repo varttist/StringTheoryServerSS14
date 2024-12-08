@@ -198,6 +198,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.SurgeryUIKey.Key: # _CorvaxNext: surgery
+        type: SurgeryBui
 # BaseMobSpecies
   - type: Sprite
     noRot: true
@@ -446,11 +448,16 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellSmall
-        allowSelfEject: false #ST14
-        allowSelfInsert: false #ST14
+        allowSelfEject: false
+        allowSelfInsert: false
   - type: Android #ST14 Component
   - type: WiresPanel
-    allowSelfOpen: false #ST14
+    allowSelfOpen: false
+# _CorvaxNext Components
+  - type: Targeting # _CorvaxNext: surgery
+  - type: SurgeryTarget # _CorvaxNext: surgery
+  - type: LayingDown # _CorvaxNext: LayingDown Laying Down
+  - type: OfferItem # Corvax-Next-Offer
 
 - type: entity
   id: MobAndroidDummy
