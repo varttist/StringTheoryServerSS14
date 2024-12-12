@@ -52,6 +52,20 @@
   - type: RespawnTracker
     respawnDelay: 5
 
+# ST14 Traitor Deathmatch [begin]
+- type: entity
+  id: ST14TraitorDeathMatch
+  parent: BaseGameRule
+  components:
+  - type: DeathMatchRule
+    gear: ST14TraitorDeathMatchGear
+  - type: KillCalloutRule
+  - type: PointManager
+  - type: RespawnDeadRule
+  - type: RespawnTracker
+    respawnDelay: 5
+# ST14 Traitor Deatmatch [end]
+
 - type: entity
   id: InactivityTimeRestart
   parent: BaseGameRule

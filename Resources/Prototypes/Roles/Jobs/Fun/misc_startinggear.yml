@@ -115,6 +115,12 @@
   inhand:
     - WeaponMeleeToolboxRobust
 
+# ST14 Traitor Deathmatch [begin]
+- type: startingGear
+  id: ST14TraitorDeathMatchGear
+  parent: SyndicateOperativeGearFull
+# ST14 Traitor Deatmatch [end]
+
 #Brigmedic
 # Corvax-Next-Brigmedic / Fuck this shit
 #- type: startingGear
