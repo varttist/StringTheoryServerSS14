@@ -357,9 +357,14 @@
       - FauxTileAstroSnow
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
-      - EnergyScalpel # _CorvaxNext: surgery Change
-      - EnergyCautery # _CorvaxNext: surgery Change
-      - AdvancedRetractor # _CorvaxNext: surgery Change
+      # Corvax-Next Start
+      - EnergyScalpel
+      - EnergyCautery
+      - AdvancedRetractor
+      # Corvax-Next End
+      # Corvax-Next-BluespaceHarvester-Start
+      - ArtificialBluespaceCrystal
+      # Corvax-Next-BluespaceHarvester-End
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -531,7 +536,10 @@
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
-      - MachineBluespaceHarvesterCircuitboard # Corvax-Next-BluespaceHarvester
+      # Corvax-Next-BluespaceHarvester-Start
+      - MachineBluespaceHarvesterCircuitboard
+      - MachineBluespaceTransitorCircuitboard
+      # Corvax-Next-BluespaceHarvester-End
       # Corvax-Next-MutableLaws-Start
       - AsimovCircuitBoard
       - CorporateCircuitBoard
@@ -545,6 +553,7 @@
       - ArtistCircuitBoard
       - NutimovCircuitBoard
       # Corvax-Next-MutableLaws-End
+      - MedicalBiofabMachineBoard #Corvax-Next-Surgery
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
