@@ -91,7 +91,7 @@
   showInVote: true # Corvax-Next-Democracy
   description: greenshift-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler 
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -126,7 +126,7 @@
   showInVote: false #Admin Use
   description: secret-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler 
+  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -168,6 +168,21 @@
   supportedMaps: DeathMatchMapPool
   rules:
     - DeathMatch31
+
+# ST14 Traitor Deathmatch [begin]
+- type: gamePreset
+  id: ST14TraitorDeathmatch
+  alias:
+    - traitordm
+    - traitordeathmatch
+  name: tdeath-match-title
+  description: tdeath-match-description
+  maxPlayers: 15
+  showInVote: true
+  supportedMaps: ST14TraitorDeathMatchMapPool
+  rules:
+    - ST14TraitorDeathMatch
+# ST14 Traitor Deathmatch [end]
 
 - type: gamePreset
   id: Nukeops

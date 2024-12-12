@@ -1,0 +1,4 @@
+- type: gameMapPool
+  id: ST14TraitorDeathMatchMapPool
+  maps:
+  - StringOmegaTDM

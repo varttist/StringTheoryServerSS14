@@ -1,0 +1,15 @@
+- type: gameMap
+  id: StringOmegaTDM
+  mapName: 'Om#g%'
+  mapPath: /Maps/string_omega_tdm.yml
+  minPlayers: 0
+  stations:
+    Omega:
+      stationProto: StandardStationArena
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: 'Om#g% St#t$!n'
+        - type: StationJobs
+          availableJobs:
+            Passenger: [ -1, -1 ]
+

@@ -115,6 +115,16 @@
   inhand:
     - WeaponMeleeToolboxRobust
 
+# ST14 Traitor Deathmatch [begin]
+- type: startingGear
+  id: ST14TraitorDeathMatchGear
+  parent: SyndicateOperativeGearFullNoUplink
+  equipment:
+    pocket2: BaseUplinkRadio40TC
+    pocket1: DoubleEmergencyOxygenTankFilled
+    belt: ClothingBeltUtilityEngineering
+# ST14 Traitor Deatmatch [end]
+
 #Brigmedic
 # Corvax-Next-Brigmedic / Fuck this shit
 #- type: startingGear
