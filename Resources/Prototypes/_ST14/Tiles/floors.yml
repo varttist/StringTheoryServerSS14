@@ -1,0 +1,15 @@
+- type: tile
+  id: ST14FloorSteelMonoIndestructible
+  name: indestructible tile
+  sprite: /Textures/Tiles/steel_mono.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  isSubfloor: false
+  footstepSounds:
+    collection: FootstepTile
+  heatCapacity: 10000
+  indestructible: true

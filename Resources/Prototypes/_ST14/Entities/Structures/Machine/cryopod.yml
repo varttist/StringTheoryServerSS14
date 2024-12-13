@@ -1,0 +1,25 @@
+# This one only handles latejoin spawns.
+- type: entity
+  parent: CryogenicSleepUnitSpawnerLateJoin
+  id: ST14TraitorCryogenicSleepUnitSpawnerLateJoin
+  name: traitor cryogenic sleep unit
+  description: Cryogenic sleep capsule for the landing of syndicate agents.
+  suffix: Spawner, LateJoin
+  components:
+    - type: Cryostorage
+      noMindGracePeriod: 1800
+      gracePeriod: 1800
+    - type: Sprite
+      noRot: true
+      sprite: _ST14/Structures/cryostorage.rsi
+      layers:
+        - state: sleeper_0
+          map: ["base"]
+    - type: ContainerSpawnPoint
+      containerId: storage
+      spawnType: LateJoin
+    - type: PointLight
+      color: "#F75358"
+      radius: 1.5
+      energy: 0.5
+      castShadows: false
