@@ -59,6 +59,8 @@
   components:
   - type: DeathMatchRule
     gear: ST14TraitorDeathMatchGear
+    rewardSpawns:
+    - id: Telecrystal10
   - type: KillCalloutRule
   - type: PointManager
   - type: RespawnDeadRule
