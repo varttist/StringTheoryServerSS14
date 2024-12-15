@@ -2,3 +2,6 @@
   id: ST14DefaultMapPool
   maps:
   - StringOmega
+  - CorvaxMaus
+  - CorvaxTushkan
+  - Packed
