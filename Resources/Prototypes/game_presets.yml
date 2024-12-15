@@ -8,8 +8,8 @@
   rules:
     - MeteorSwarmScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
-    - SpaceTrafficControlFriendlyEventScheduler
+#    - SpaceTrafficControlEventScheduler # ST14 remove # ST14 remove
+#    - SpaceTrafficControlFriendlyEventScheduler # ST14 remove
     - BasicRoundstartVariation
 
 - type: gamePreset
@@ -24,7 +24,7 @@
   rules:
     - KesslerSyndromeScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
+#    - SpaceTrafficControlEventScheduler # ST14 remove
     - BasicRoundstartVariation
 
 - type: gamePreset
@@ -41,7 +41,7 @@
     - Zombie
     - KesslerSyndromeScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
+#    - SpaceTrafficControlEventScheduler # ST14 remove
     - BasicRoundstartVariation
 
 - type: gamePreset
@@ -64,8 +64,8 @@
     - MeteorSwarmMildScheduler
     - MeteorSwarmScheduler
     - RampingStationEventScheduler
-    - SpaceTrafficControlEventScheduler
-    - SpaceTrafficControlFriendlyEventScheduler
+#    - SpaceTrafficControlEventScheduler # ST14 remove
+#    - SpaceTrafficControlFriendlyEventScheduler # ST14 remove
     - BasicRoundstartVariation
 
 - type: gamePreset
@@ -91,7 +91,7 @@
   showInVote: true # Corvax-Next-Democracy
   description: greenshift-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler
+#  - SpaceTrafficControlFriendlyEventScheduler # ST14 remove
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -115,7 +115,7 @@
   rules:
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
+#    - SpaceTrafficControlEventScheduler # ST14 remove
     - BasicRoundstartVariation
 
 - type: gamePreset
@@ -126,7 +126,7 @@
   showInVote: false #Admin Use
   description: secret-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler
+#  - SpaceTrafficControlFriendlyEventScheduler # ST14
   - BasicRoundstartVariation
 
 - type: gamePreset
@@ -153,7 +153,7 @@
     - SubGamemodesRule
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
+#    - SpaceTrafficControlEventScheduler # ST14 remove
     - BasicRoundstartVariation
 
 - type: gamePreset
@@ -196,7 +196,7 @@
     - SubGamemodesRule
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
+#    - SpaceTrafficControlEventScheduler # ST14 remove
     - BasicRoundstartVariation
 
 - type: gamePreset
@@ -213,7 +213,7 @@
     - SubGamemodesRule
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
-    - SpaceTrafficControlEventScheduler
+#    - SpaceTrafficControlEventScheduler # ST14 remove
     - BasicRoundstartVariation
 
 - type: gamePreset
