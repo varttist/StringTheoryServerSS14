@@ -18,5 +18,7 @@ else
     echo "Обновлений нет, запуск сервера..."
 fi
 
+cp Resources/ConfigPresets/_ST14/st14_server.toml bin/Content.Server/server_config.toml
+
 # Запуск сервера
 dotnet run --project Content.Server --configuration Release
