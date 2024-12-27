@@ -2,8 +2,8 @@
 hostname = "String Theory Server"
 desc = "wtf? No rp??? Only fun?!"
 map_pool = "ST14DefaultMapPool"
-maxplayers = 50
-soft_max_players = 40
+maxplayers = 25
+soft_max_players = 20
 map_rotation = true
 role_timers = false
 peaceful_end = false
@@ -33,6 +33,12 @@ auto_call_time = 0
 [hub]
 advertise = false
 tags = "lang:ru,rp:low,region:eu_e"
+
+[netres]
+limit = 20
+
+[status]
+enable = true
 
 [ooc]
 enable_during_round = true
