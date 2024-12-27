@@ -28,7 +28,7 @@
     back:
     - ClothingNeckHeadphones
 
-# Plushies
+# Toys
 - type: loadout
   id: PlushieLizard
   storage:
@@ -48,6 +48,15 @@
     back:
     - ST14Deck52Filled
 # ST14 add [end]
+
+- type: loadout
+  id: ThreeCandles
+  dummyEntity: LoadoutDummyCandles
+  storage:
+    back:
+    - CandleRed
+    - CandleBlue
+    - CandleGreenSmall
 
 # Smokeables
 - type: loadout
