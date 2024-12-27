@@ -77,10 +77,7 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - SecWatchCartridge # Corvax-Next-SecWatch
-<<<<<<< HEAD
-=======
       - NanoChatCartridge # Corvax-Next-PDAChat
->>>>>>> next/master
     cartridgeSlot:
       priority: -1
       name: device-pda-slot-component-slot-name-cartridge
@@ -146,10 +143,7 @@
       - NewsReaderCartridge
       - MedTekCartridge
       - SecWatchCartridge # Corvax-Next-SecWatch
-<<<<<<< HEAD
-=======
       - NanoChatCartridge # Corvax-Next-PDAChat
->>>>>>> next/master
 
 - type: entity
   parent: BasePDA
@@ -428,10 +422,7 @@
       - NewsReaderCartridge
       - AstroNavCartridge
       - SecWatchCartridge # Corvax-Next-SecWatch
-<<<<<<< HEAD
-=======
       - NanoChatCartridge # Corvax-Next-PDAChat
->>>>>>> next/master
 
 - type: entity
   parent: BasePDA
