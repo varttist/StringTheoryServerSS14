@@ -46,3 +46,6 @@ enable_during_round = true
 [looc]
 enabled_dead = true
 enabled_crit = true
+
+[mood]
+enabled = false
