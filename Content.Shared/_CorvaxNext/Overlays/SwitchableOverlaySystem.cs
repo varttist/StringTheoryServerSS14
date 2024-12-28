@@ -3,6 +3,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Content.Shared._ST14.NightVisionLight; // ST14 add
 
 namespace Content.Shared._CorvaxNext.Overlays;
 
@@ -48,5 +49,11 @@ public abstract class SwitchableOverlaySystem<TComp, TEvent> : EntitySystem
 
         args.Handled = true;
         UpdateVision(uid, component.IsActive);
+
+        // ST14 add [begin]
+        var ev = new NightVisionLightSwitchEvent(component.IsActive);
+
+        RaiseLocalEvent(uid, ref ev);
+        // ST14 add [end]
     }
 }

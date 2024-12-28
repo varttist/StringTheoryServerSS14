@@ -13,6 +13,15 @@
   - type: ClothingGrantComponent
     component:
     - type: NightVision
+  - type: PointLight # ST14 add [begin]
+    color: green
+    enabled: false
+    radius: 2
+    energy: 3
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    netsync: true
+  - type: NightVisionLight # ST14 add [end]
 
 - type: entity
   parent: ClothingEyesNightVisionGoggles
