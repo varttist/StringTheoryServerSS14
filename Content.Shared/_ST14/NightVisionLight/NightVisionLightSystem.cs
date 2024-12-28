@@ -21,19 +21,16 @@ public sealed class NightVisionLightSystem : EntitySystem
 
     private void OnPlayerEquipped(EntityUid uid, NightVisionLightComponent component, ClothingGotEquippedEvent args)
     {
-        Logger.Error("Att");
         SwitchLight(uid, true);
     }
 
     private void OnPlayerUnequipped(EntityUid uid, NightVisionLightComponent component, ClothingGotUnequippedEvent args)
     {
-        Logger.Error("Dett");
         SwitchLight(uid, false);
     }
 
     private void OnSwitchLight(EntityUid uid, InventoryComponent component, NightVisionLightSwitchEvent args)
     {
-        Logger.Error("Switch event");
         if (_inventorySystem.TryGetContainerSlotEnumerator(uid, out var containerSlotEnumerator))
         {
             while (containerSlotEnumerator.NextItem(out var item, out var _))
