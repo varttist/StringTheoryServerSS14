@@ -21,7 +21,7 @@ easy_mode = false
 time = 10.0
 
 [whitelist]
-enabled = true
+enabled = false
 
 [ic]
 flavor_text = true
