@@ -66,6 +66,7 @@
     interfaces:
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
+        requireInputValidation: false
       enum.BorgUiKey.Key:
         type: BorgBoundUserInterface
       enum.StrippingUiKey.Key:
@@ -247,6 +248,7 @@
         Heat: 10 # capable of touching light bulbs and stoves without feeling pain!
   - type: TTS # Corvax-TTS
     voice: TrainingRobot
+  - type: Targeting # Corvax-Next-Surgery
 
 - type: entity
   abstract: true
@@ -315,6 +317,7 @@
     access: [["SyndicateAgent"], ["NuclearOperative"]]
   - type: SiliconLawProvider
     laws: SyndicateStatic
+    subverted: true
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary

@@ -1,0 +1,24 @@
+- type: gameMapPool
+  id: NextMapPool
+  maps:
+  # Highpop
+  - NextDelta
+  - NextAvrite
+  - NextAstra
+  - NextPilgrim
+  - NextBagel
+  - NextBox
+  # Midpop
+  - NextPaper
+  - NextOutpost
+  - NextAwesome
+  - CorvaxPearl
+  - NextAmber
+  - NextMarathon
+  # Lowpop
+  - CorvaxCute
+  - NextSilly
+  - NextMaus
+  - NextTushkan
+  - NextOmega
+  - NextPacked
