@@ -14,7 +14,7 @@ NEW_HASH=$(git rev-parse HEAD)
 if [ "$CURRENT_HASH" != "$NEW_HASH" ]; then
     echo "Найдены обновления, пересборка сервера..."
     dotnet build -c release
-   cp Resources/ConfigPresets/_ST14/st14_server.toml bin/Content.Server/server_config.toml
+    cp Resources/ConfigPresets/_ST14/st14_server.toml bin/Content.Server/server_config.toml
 else
     echo "Обновлений нет, запуск сервера..."
 fi
