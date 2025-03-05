@@ -5,8 +5,12 @@ map_pool = "ST14DefaultMapPool"
 maxplayers = 25
 soft_max_players = 20
 map_rotation = true
-role_timers = false
 peaceful_end = false
+defaultpreset = "greenshift"
+fallbackenabled = false
+fallbackpreset = "greenshift"
+role_timers = false
+tabletop_place = true
 
 [console]
 login_host_user = "Welldzhik"
