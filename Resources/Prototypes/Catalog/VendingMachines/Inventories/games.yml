@@ -19,3 +19,7 @@
     BooksBag: 3
     ST14Deck52Filled: 5 # ST14 added
     CardBoxBlack: 5 # Corvax Next Cards
+  contrabandInventory:
+    Basketball: 1
+    FoodSnackBoritos: 3
+    DrinkSpaceMountainWindCan: 3
