@@ -2,6 +2,8 @@
   id: NextOmega
   mapName: 'Next Omega'
   mapPath: /Maps/Next/next_omega.yml
+  maxRandomOffset: 0
+  randomRotation: false
   minPlayers: 0
   maxPlayers: 25
   stations:
@@ -63,3 +65,9 @@
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
+        # Goobstation blob-config-start LOW
+        - type: StationBlobConfig
+          stageBegin: 15
+          stageCritical: 200
+          stageTheEnd: 400
+        # Goobstation blob-config-end

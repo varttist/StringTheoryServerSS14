@@ -64,6 +64,10 @@
   id: ClothingEyesThermalVisionGogglesSyndie
   suffix: "Chameleon"
   components:
+  - type: Sprite
+    sprite: _CorvaxNext/Clothing/Eyes/Goggles/thermal.rsi
+  - type: Clothing
+    sprite: _CorvaxNext/Clothing/Eyes/Goggles/thermal.rsi
   - type: ChameleonClothing
     slot: [eyes]
     default: ClothingEyesGlassesSunglasses
