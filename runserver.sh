@@ -5,8 +5,9 @@
 
 # Обновление репозитория
 git pull
-git submodule update --init --recursive
-dotnet build -c release
+# git submodule update --init --recursive
+# dotnet build -c release
+dotnet build
 сp Resources/ConfigPresets/_ST14/st14_server.toml bin/Content.Server/server_config.toml
 
 # Проверка текущей версии с последней версией
