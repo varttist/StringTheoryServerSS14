@@ -19,6 +19,7 @@
     BooksBag: 3
     ST14Deck52Filled: 5 # ST14 added
     CardBoxBlack: 5 # Corvax Next Cards
+    CarcBoxClassic: 1 # Corvax Next Spacessonne
   contrabandInventory:
     Basketball: 1
     FoodSnackBoritos: 3

@@ -835,6 +835,7 @@
   minLimit: 0
   loadouts:
   - AtmosphericTechnicianWintercoat
+  - AtmosphericsOveralls # CorvaxAtmosFashion
 
 - type: loadoutGroup
   id: AtmosphericTechnicianBackpack
@@ -1012,6 +1013,7 @@
   loadouts:
   - HeadofSecurityCloak
   - HeadofSecurityMantle
+  - HeadofSecurityShoulderMantle # Corvax-Loadouts
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing

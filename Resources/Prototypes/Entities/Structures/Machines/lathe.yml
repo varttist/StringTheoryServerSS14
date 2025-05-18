@@ -130,6 +130,7 @@
     - ServiceStatic
     - PowerCellsStatic
     - ElectronicsStatic
+    - NextServiceStatic
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
@@ -404,6 +405,8 @@
     - SecurityAmmoStatic
     - SecurityWeaponsStatic
     dynamicPacks:
+    - SalvageSecurityBoards
+    - SalvageSecurityWeapons
     - SecurityEquipment
     - SecurityBoards
     - SecurityExplosives
