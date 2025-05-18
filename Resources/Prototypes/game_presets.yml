@@ -204,24 +204,14 @@
   description: nukeops-description
   showInVote: true # Corvax-Next-Democracy
   rules:
-<<<<<<< HEAD
     - Nukeops
+    - DummyNonAntagChance
     - SubGamemodesRule
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
 #    - SpaceTrafficControlEventScheduler # ST14 remove
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
-=======
-  - Nukeops
-  - DummyNonAntagChance
-  - SubGamemodesRule
-  - BasicStationEventScheduler
-  - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
-  - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
->>>>>>> next/master
 
 - type: gamePreset
   id: Revolutionary
@@ -233,7 +223,7 @@
   description: rev-description
   showInVote: true # Corvax-Next-Democracy
   rules:
-<<<<<<< HEAD
+    - DummyNonAntagChance
     - Revolutionary
     - SubGamemodesRule
     - BasicStationEventScheduler
@@ -241,16 +231,6 @@
 #    - SpaceTrafficControlEventScheduler # ST14 remove
     - BasicRoundstartVariation
     - LavalandStormScheduler # Lavaland Change
-=======
-  - DummyNonAntagChance
-  - Revolutionary
-  - SubGamemodesRule
-  - BasicStationEventScheduler
-  - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
-  - BasicRoundstartVariation
-  - LavalandStormScheduler # Lavaland Change
->>>>>>> next/master
 
 - type: gamePreset
   id: Wizard
