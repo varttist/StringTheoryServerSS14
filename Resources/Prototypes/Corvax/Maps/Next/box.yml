@@ -1,6 +1,6 @@
 - type: gameMap
   id: NextBox
-  mapName: 'Next Box'
+  mapName: 'NTTG Бокс'
   mapPath: /Maps/Next/next_box.yml
   maxRandomOffset: 0
   randomRotation: false
@@ -49,6 +49,7 @@
             SecurityCadet: [ 4, 4 ]
             Detective: [ 1, 1 ]
             Pilot: [ 1, 1]
+            Brigmedic: [ 1, 1 ]
             # service
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
@@ -68,9 +69,9 @@
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 2, 3 ]
-        # Goobstation blob-config-start HUGEs
+        # Corvax-next blob-config-start HUGEs
         - type: StationBlobConfig
           stageBegin: 40
-          stageCritical: 450
-          stageTheEnd: 900
-        # Goobstation blob-config-end
+          stageCritical: 700
+          stageTheEnd: 1200
+        # Corvax-next blob-config-end

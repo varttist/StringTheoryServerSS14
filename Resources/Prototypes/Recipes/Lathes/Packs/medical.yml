@@ -15,6 +15,7 @@
   - Syringe
   - PillCanister
   - HandLabeler
+  - BaseChemistryEmptyVial
 
 - type: latheRecipePack
   parent: BasicChemistryStatic
@@ -29,10 +30,12 @@
   recipes:
   - Scalpel
   - Retractor
+  - BoneSetter
   - Cautery
   - Drill
   - Saw
   - Hemostat
+  - BoneGel # Corvax Next
 
 - type: latheRecipePack
   id: MedicalStatic

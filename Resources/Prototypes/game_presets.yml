@@ -159,6 +159,7 @@
   description: traitor-description
   showInVote: true # Corvax-Next-Democracy
   rules:
+    - DummyNonAntagChance
     - Traitor
     - SubGamemodesRule
     - BasicStationEventScheduler
@@ -204,6 +205,7 @@
   showInVote: true # Corvax-Next-Democracy
   rules:
     - Nukeops
+    - DummyNonAntagChance
     - SubGamemodesRule
     - BasicStationEventScheduler
     - MeteorSwarmScheduler
@@ -221,6 +223,7 @@
   description: rev-description
   showInVote: true # Corvax-Next-Democracy
   rules:
+    - DummyNonAntagChance
     - Revolutionary
     - SubGamemodesRule
     - BasicStationEventScheduler
@@ -238,11 +241,13 @@
   showInVote: false
   rules:
   - Wizard
+  - DummyNonAntagChance
   - SubGamemodesRuleNoWizard #No Dual Wizards at the start, midround is fine
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - LavalandStormScheduler # Lavaland Change
 
 - type: gamePreset
   id: Zombie
